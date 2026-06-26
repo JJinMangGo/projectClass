@@ -81,7 +81,7 @@ body {
 }
 
 #wrap {
-  min-width: 375px;
+  min-width: 360px;
 }
 
 .heading {
@@ -164,6 +164,7 @@ nav a:hover {
     display: block;
     background-color: var(--color-bg-card-black);
     color: var(--color-white);
+    z-index: 5;
   }
 
   .mo-navi h2 {
@@ -171,7 +172,8 @@ nav a:hover {
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
-    background-color: #E30012;
+    /* background-color: #E30012; */
+    cursor: pointer;
   }
   .mo-navi h2::after {
     content: "";
@@ -199,6 +201,7 @@ nav a:hover {
   }
 
   .menu-btn {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -206,7 +209,7 @@ nav a:hover {
     gap: 4px;
     width: 56px;
     height: 56px;
-    /* background-color: #E30012; */
+    z-index: 10;
   }
   .menu-btn span {
     display: block;
@@ -250,7 +253,7 @@ nav a:hover {
   left: 50%;
   transform: translateX(-50%);
   /* fiexd, absolute 중앙정렬 방법*/
-  display: flex;
+  display: none;
   justify-content: space-between;
   width: calc(100% - 40px);
   max-width: 714px;
@@ -259,6 +262,11 @@ nav a:hover {
   padding: 0 20px;
   border-radius: 2rem;
   background-color: var(--color-white-alpha-80);
+  z-index: 99;
+  box-shadow: 0 0 10px rgba(0,0,0,0.03);
+}
+.menu-wrap.show {
+  display: flex;
 }
 .menu-wrap a {
   display: block;
@@ -525,12 +533,15 @@ nav a:hover {
   height: 100%;
 }
 
-.sec-wrap {
-  overflow: auto;
-}
 
+html {
+  overflow-y: scroll;
+}
 /* intro-sec - bg박스 추가 */
-.bg {
+.bg {    
+  position: sticky;
+  top: 0; 
+  z-index: 1;
   width: 100%;
   height: 150dvh;
   background: url(../img/s3_bg.jpg) no-repeat scroll center / cover;
@@ -541,7 +552,7 @@ nav a:hover {
     height: 100dvh;
   }
 }
-.intro-sec {    
+.intro-sec {   
   padding: 140px 1.25rem 60px;
   background-color: var(--color-white);
 }
@@ -636,7 +647,7 @@ nav a:hover {
 .pd {
   padding: 140px 0;
 }
-.interior-sec {
+.interior-sec {  
   padding-bottom: 0;
 }
 .interior-sec h2 {
@@ -794,6 +805,12 @@ nav a:hover {
   color: var(--color-red-primary);
 }
 
+@media (max-width: 980px) {
+  .merit-sec strong {
+    font-size: 48px;
+  }
+}
+
 @media (max-width: 820px) {
   .pd h2 + p {
     font-size: 20px;
@@ -803,9 +820,6 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     /* margin-top: 30px; */
-  }
-  .merit-sec strong {
-    font-size: 48px;
   }
   .merit-sec h3 {
     font-size: 20px;
