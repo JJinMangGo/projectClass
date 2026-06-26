@@ -66,6 +66,41 @@
         </div>
       </div>
     </header>
+    <script>
+      // querySelectorAll()
+      const menuBtn = document.querySelector(".menu-btn");
+      const moNaviBox = document.querySelector(".mo-navi-box");
+
+     
+      // menuBtn.addEventListener("click", function() {
+      //   console.log("클릭되었당")
+      // })
+
+      // 화살표함수 add, remove, toggle
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("is-open");
+        moNaviBox.classList.toggle("is-open");
+
+        if(menuBtn.classList.contains("is-open")) {
+          console.log("열려있어!")
+        } else {
+          console.log("닫혀있어!")
+        }     
+      })      
+
+      const h2 = document.querySelector(".mo-navi-box h2");
+      const ul = document.querySelector(".mo-navi-box ul");
+
+      h2.addEventListener("click", () => {
+        ul.classList.toggle("is-open");
+      })
+    </script>
+    <!-- 
+      menuBtn.classList.add() - 클래스 추가만 함
+      menuBtn.classList.remove() - 클래스 제거만 함
+      menuBtn.classList.toggle() - 있으면 제거, 없으면 추가함
+      menuBtn.classList.replace("is-open", "is-closed") - 클래스를 다른걸로 바꿈
+    -->
     <main>
       <ul class="menu-wrap">
         <li class="active"><a href="#brand">브랜드소개</a></li>
@@ -75,7 +110,33 @@
         <li><a href="#price">창업비용 및 문의</a></li>
       </ul>
       <!-- 스크롤작업시 header가 사라진 후에 생성 -->
-      <section class="hero-sec heading scroll" id="brand">
+      
+      <script>
+        const menuWrap = document.querySelector(".menu-wrap");
+
+        window.addEventListener("scroll", () => {
+          const scrollY = window.scrollY;
+          
+          console.log(scrollY);
+
+          if(scrollY > 100) {
+            // menuWrap.classList.add("show");
+            menuWrap.style.display = "flex";
+          } else {
+            // menuWrap.classList.remove("show");
+            menuWrap.style.display = "none"; 
+          }
+        })
+      </script>
+      <!-- 
+        style.top
+        style.backgroundColor
+        style.boxShadow
+        style.borderRadius
+        style.fontSize
+        style.paddingTop
+      -->
+      <section class="hero-sec heading " id="brand">
         <div class="txt-ani">
           <div><strong>멈출수 없는 맛</strong></div>
           <div><strong>불맛을 제대로</strong></div>
@@ -404,7 +465,7 @@
                       <span class="label-text">유입경로</span>
                     </label>
                     <!--business-box active toggleClass -->
-                    <div class="business-box ">
+                    <div class="business-box">
                       <input type="text" name="" id="" value="유입경로 선택" readonly>
                       <img src="img/selectarrow.png" alt="">
                       <ul class="business-select">      
@@ -451,7 +512,56 @@
             </div>
           </div>
         </section>
-      </div>
+      </div>      
+      <script>
+        const toggleBtns = document.querySelectorAll(".toggle-btn");
+
+        // toggleBtns.forEach(btn => {})
+
+        toggleBtns.forEach(btn => {
+          btn.addEventListener("click", () => {
+            console.log("클릭된 버튼", btn.textContent);
+
+            toggleBtns.forEach( b => {
+              b.classList.remove("active");
+            })
+
+            btn.classList.add("active");
+           
+          })
+        })
+
+       
+        const businessBox = document.querySelector('.business-box');
+        const businessInput = document.querySelector('input[name=""]');
+        const businessLis = document.querySelectorAll('.business-select li');
+
+        // 열고닫기 기능
+        businessBox.addEventListener("click", () => {
+          businessBox.classList.toggle("active");
+        })
+
+        businessLis.forEach(li => {
+          li.addEventListener("click", (e) => {
+            e.stopPropagation(); // 이벤트가 더이상 퍼져나가는걸 방지
+
+            businessInput.value = li.textContent;
+            businessBox.classList.remove("active");
+          })
+        })
+      </script>
+      <!-- 
+       html은 부모 자식 구조임
+        <div class="business-box"> <-부모
+        <ul class="business-select"> <-자식
+          <li>매장방문</li> <-손자
+        </ul>
+        </div>
+
+        손자li를 클릭하면 부모도 클릭된것처럼 느껴짐 
+        li도 클릭되고 부모도 클릭된거라 인지하고 두개의 addEventListener가 모두 실행됨
+        e.stopPropagation()을 사용하면 부모까지 가지않게 전파를 막음 
+      -->
     </main>
     <footer>
       <ul class="line1">
@@ -470,4 +580,5 @@
     </footer>
   </div>
 </body>
+<script src=""></script>
 </html>
