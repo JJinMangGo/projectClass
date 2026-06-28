@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +16,11 @@
   <meta property="og:description" content="ONE BITE NO BREAKS 멈출 수 없는 맛! 꾸블랙치킨">
   <!-- 300자내외 -->
   <meta property="og:url" content="https://kkublack.com/index.php">
-  <meta property="og:image" content="https://kkublack.com/storage/site/79c32e8e3a5413f8fe897e5f1c3d8327_oWY6qUGB_c18afe96708fac2c91f7db2130a63d614554dfee.png">
+  <meta property="og:image"
+    content="https://kkublack.com/storage/site/79c32e8e3a5413f8fe897e5f1c3d8327_oWY6qUGB_c18afe96708fac2c91f7db2130a63d614554dfee.png">
   <!-- og이미지 사이즈 1200 * 630 -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://kkublack.com//storage/site/79c32e8e3a5413f8fe897e5f1c3d8327_Ge7ZgWNU_2b193835a6fc1108488d9489bf378be7cbccd327.png">
+  <link rel="shortcut icon" type="image/x-icon"
+    href="https://kkublack.com//storage/site/79c32e8e3a5413f8fe897e5f1c3d8327_Ge7ZgWNU_2b193835a6fc1108488d9489bf378be7cbccd327.png">
   <link rel="canonical" href="https://kkublack.com/index.php">
 
   <link rel="stylesheet" href="../assets/css/paper.css">
@@ -27,8 +30,12 @@
 
   <link rel="stylesheet" href="css/main.css">
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <!-- ScrollTrigger 플러그인 (필수!) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </head>
+
 <body>
   <div id="wrap">
     <header>
@@ -71,7 +78,7 @@
       const menuBtn = document.querySelector(".menu-btn");
       const moNaviBox = document.querySelector(".mo-navi-box");
 
-     
+
       // menuBtn.addEventListener("click", function() {
       //   console.log("클릭되었당")
       // })
@@ -81,12 +88,12 @@
         menuBtn.classList.toggle("is-open");
         moNaviBox.classList.toggle("is-open");
 
-        if(menuBtn.classList.contains("is-open")) {
+        if (menuBtn.classList.contains("is-open")) {
           console.log("열려있어!")
         } else {
           console.log("닫혀있어!")
-        }     
-      })      
+        }
+      })
 
       const h2 = document.querySelector(".mo-navi-box h2");
       const ul = document.querySelector(".mo-navi-box ul");
@@ -110,21 +117,21 @@
         <li><a href="#price">창업비용 및 문의</a></li>
       </ul>
       <!-- 스크롤작업시 header가 사라진 후에 생성 -->
-      
+
       <script>
         const menuWrap = document.querySelector(".menu-wrap");
 
         window.addEventListener("scroll", () => {
           const scrollY = window.scrollY;
-          
+
           console.log(scrollY);
 
-          if(scrollY > 100) {
+          if (scrollY > 100) {
             // menuWrap.classList.add("show");
             menuWrap.style.display = "flex";
           } else {
             // menuWrap.classList.remove("show");
-            menuWrap.style.display = "none"; 
+            menuWrap.style.display = "none";
           }
         })
       </script>
@@ -144,6 +151,48 @@
         <h2>꾸블랙치킨</h2>
         <p>1만 시간의 집념으로 제대로 구웠다.</p>
       </section>
+      <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        let wheelScrollCount = 0;
+        let canScroll = true; // throttle 플래그
+
+        const heroPanel = document.querySelector('#brand');
+
+        const scrollTrigger = ScrollTrigger.create({
+          trigger: heroPanel,
+          start: 'top top',
+          pin: true,
+          pinSpacing: false
+        });
+
+        window.addEventListener('wheel', (e) => {
+          if (scrollTrigger.isActive && canScroll) {
+            e.preventDefault();
+
+            canScroll = false; // 잠깐 막음
+            wheelScrollCount++;
+
+            if (wheelScrollCount === 1) {
+              heroPanel.classList.add('scroll');
+              console.log('스크롤 한번');
+            }
+
+            if (wheelScrollCount === 2) {
+              scrollTrigger.disable();
+              wheelScrollCount = 0;
+              console.log('스크롤 두번 - 고정 해제');
+            }
+
+            // 300ms 후에 다시 스크롤 가능
+            setTimeout(() => {
+              canScroll = true;
+            }, 250);
+          }
+        }, {
+          passive: false
+        });
+      </script>
       <div class="banner-wrap heading">
         <div class="banner-track">
           <div class="banner-item">
@@ -173,6 +222,7 @@
       <!-- <div class="bg-sec">
         <img src="img/s3_bg.jpg" alt="꾸블랙치킨">
       </div> -->
+
       <div class="sec-wrap">
         <div class="bg">
           <section class="intro-sec">
@@ -183,7 +233,9 @@
               </h2>
               <div class="txt-box">
                 <p>치밥, 사리, 토핑으로 유명한 숯불치킨은 많은데 왜 ‘불맛’으로 기억되는 숯불치킨은 없을까?</p>
-                <p>세상엔 수많은 숯불치킨이 있지만, 우리는 가장 기본인 ‘불맛’의 본질에 집중했습니다. F&B 전문가들이 모여 전통 숯불의 깊은 풍미를 재해석하고, 현대적 기술을 접목해 숯불의 향 · 불의 온도 · 소스의 균형을 치밀하게 설계했습니다. 인위적인 향이 아닌 진짜 숯으로 완성한 압도적인 맛의 차이. 오직 꾸블랙에서만 경험할 수 있는, 입안 가득 부드럽고 은은하게 퍼지는 진짜 숯불향을 느껴보세요.</p>
+                <p>세상엔 수많은 숯불치킨이 있지만, 우리는 가장 기본인 ‘불맛’의 본질에 집중했습니다. F&B 전문가들이 모여 전통 숯불의 깊은 풍미를 재해석하고, 현대적 기술을 접목해 숯불의 향 ·
+                  불의 온도 · 소스의 균형을 치밀하게 설계했습니다. 인위적인 향이 아닌 진짜 숯으로 완성한 압도적인 맛의 차이. 오직 꾸블랙에서만 경험할 수 있는, 입안 가득 부드럽고 은은하게 퍼지는
+                  진짜 숯불향을 느껴보세요.</p>
               </div>
             </div>
           </section>
@@ -218,7 +270,7 @@
           </div>
         </section>
         <script>
-          const swiper = new Swiper('.g-slider',{
+          const swiper = new Swiper('.g-slider', {
             loop: true,
             pagination: {
               el: '.g-slider .swiper-pagination',
@@ -237,7 +289,7 @@
                 <span>단 3가지 기술에 압축했습니다</span>
               </h2>
               <p>초보 점주님이 만들어도 고객에게 가는 맛의 감동은 늘 똑같도록.<br>
-              획일화된 맛을 쉽고 빠르게 구현하는 꾸블랙만의 기술력</p>
+                획일화된 맛을 쉽고 빠르게 구현하는 꾸블랙만의 기술력</p>
             </div>
             <ul>
               <li>
@@ -279,7 +331,10 @@
             <span>비법은 빠른 조리과정에 있습니다</span>
           </h2>
           <div class="media">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JrRyUu3Q1wE?si=Qzj_QBXMAAxy3ioM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JrRyUu3Q1wE?si=Qzj_QBXMAAxy3ioM"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <div class="sub-tit">
             <p>6마리 완성에 <span>단 8분!</span></p>
@@ -291,7 +346,7 @@
             <div class="txt-box">
               <h2 class="heading tit">성원에 감사드립니다.</h2>
               <p>부산본점 오픈과 함께 지금까지 수많은 가맹 문의가 이어졌으나<br>
-  무분별한 빠른 확장보다, 가맹점과 함께 성장할 수 있는 체계를 만들기 위해 준비에 집중하였습니다.<br>이제 그 기다림에 보답하며, 단 한 번의 창업 프로모션을 시작합니다.</p>
+                무분별한 빠른 확장보다, 가맹점과 함께 성장할 수 있는 체계를 만들기 위해 준비에 집중하였습니다.<br>이제 그 기다림에 보답하며, 단 한 번의 창업 프로모션을 시작합니다.</p>
             </div>
             <ul>
               <li class="r-badge">
@@ -332,7 +387,7 @@
               <table>
                 <col>
                 <col>
-                <col>              
+                <col>
                 <col>
                 <thead>
                   <tr>
@@ -412,41 +467,41 @@
               </p>
             </div>
             <div class="form-container">
-                <div class="form-header">
-                  <h3>상담자 정보</h3>
-                  <p class="gray">별표 표시는 필수 입력 항목입니다.*</p>
+              <div class="form-header">
+                <h3>상담자 정보</h3>
+                <p class="gray">별표 표시는 필수 입력 항목입니다.*</p>
+              </div>
+              <form class="contact-form" action="">
+                <div class="form-group">
+                  <label for="name">
+                    <span class="required">*</span>
+                    <span class="label-text">성함</span>
+                  </label>
+                  <input type="text" id="name" name="name" placeholder="성함" required>
                 </div>
-                <form class="contact-form" action="">
-                  <div class="form-group">
-                    <label for="name">
-                      <span class="required">*</span>
-                      <span class="label-text">성함</span>
-                    </label>
-                    <input type="text" id="name" name="name" placeholder="성함" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="phone">
-                      <span class="required">*</span>
-                      <span class="label-text">연락처</span>
-                    </label>
-                    <input type="tel" id="phone" name="phone" placeholder="연락처" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="location">
-                      <span class="required">*</span>
-                      <span class="label-text">창업희망지역</span>
-                    </label>
-                    <select name="location" id="location" required>
-                      <option value="">시/도 선택</option>
-                      <option value="seoul">서울특별시</option>
-                      <option value="incheon">인천광역시</option>
-                      <option value="daejeon">대전광역시</option>
-                      <option value="gwangju">광주광역시</option>
-                      <option value="daegu">대구광역시</option>
-                      <option value="ulsan">울산광역시</option>
-                    </select>
-                  </div>
-                  <!-- <div class="form-group">
+                <div class="form-group">
+                  <label for="phone">
+                    <span class="required">*</span>
+                    <span class="label-text">연락처</span>
+                  </label>
+                  <input type="tel" id="phone" name="phone" placeholder="연락처" required>
+                </div>
+                <div class="form-group">
+                  <label for="location">
+                    <span class="required">*</span>
+                    <span class="label-text">창업희망지역</span>
+                  </label>
+                  <select name="location" id="location" required>
+                    <option value="">시/도 선택</option>
+                    <option value="seoul">서울특별시</option>
+                    <option value="incheon">인천광역시</option>
+                    <option value="daejeon">대전광역시</option>
+                    <option value="gwangju">광주광역시</option>
+                    <option value="daegu">대구광역시</option>
+                    <option value="ulsan">울산광역시</option>
+                  </select>
+                </div>
+                <!-- <div class="form-group">
                     <label for="business-type">
                       <span class="label-text">유입경로</span>
                     </label>
@@ -460,59 +515,59 @@
                       <option value="other">기타</option>
                     </select>
                   </div> -->
-                  <div class="form-group select-toggle">
-                    <label for="business-type">
-                      <span class="label-text">유입경로</span>
-                    </label>
-                    <!--business-box active toggleClass -->
-                    <div class="business-box">
-                      <input type="text" name="" id="" value="유입경로 선택" readonly>
-                      <img src="img/selectarrow.png" alt="">
-                      <ul class="business-select">      
-                        <li class="store_visit">매장방문</li>
-                        <li class="naver">네이버</li>
-                        <li class="instagram">인스타그램</li>
-                        <li class="youtube">유튜브</li>
-                        <li class="referral">지인소개</li>
-                        <li class="other">기타</li>
-                      </ul>
-                    </div>
+                <div class="form-group select-toggle">
+                  <label for="business-type">
+                    <span class="label-text">유입경로</span>
+                  </label>
+                  <!--business-box active toggleClass -->
+                  <div class="business-box">
+                    <input type="text" name="" id="" value="유입경로 선택" readonly>
+                    <img src="img/selectarrow.png" alt="">
+                    <ul class="business-select">
+                      <li class="store_visit">매장방문</li>
+                      <li class="naver">네이버</li>
+                      <li class="instagram">인스타그램</li>
+                      <li class="youtube">유튜브</li>
+                      <li class="referral">지인소개</li>
+                      <li class="other">기타</li>
+                    </ul>
                   </div>
-                  <div class="form-group">
-                     <label for="">
-                      <span class="label-text">점포유무</span>
-                    </label>
-                    <div class="toggle-group">
-                      <button type="button" class="toggle-btn active" data-value="option1">없음</button>
-                      <button type="button" class="toggle-btn" data-value="option2">있음</button>
-                      <!-- <input type="hidden" id="category" name="category" value="option1"> -->
-                      <!-- 사용자가 선택했지만, 서버에는 뭘 선택했는지 모름
+                </div>
+                <div class="form-group">
+                  <label for="">
+                    <span class="label-text">점포유무</span>
+                  </label>
+                  <div class="toggle-group">
+                    <button type="button" class="toggle-btn active" data-value="option1">없음</button>
+                    <button type="button" class="toggle-btn" data-value="option2">있음</button>
+                    <!-- <input type="hidden" id="category" name="category" value="option1"> -->
+                    <!-- 사용자가 선택했지만, 서버에는 뭘 선택했는지 모름
                        value에 선택값이 저장되면서 서버가 확인할 수 있음 -->
-                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="avail-time">상담 가능 요일/시간</label>
-                    <input type="text" id="avail-time" name="avail-time" placeholder="예) 주말/14시 이후">
+                </div>
+                <div class="form-group">
+                  <label for="avail-time">상담 가능 요일/시간</label>
+                  <input type="text" id="avail-time" name="avail-time" placeholder="예) 주말/14시 이후">
+                </div>
+                <div class="form-group">
+                  <label for="message">문의내용</label>
+                  <textarea name="message" id="message" placeholder="문의내용" rows="6"></textarea>
+                </div>
+                <div class="form-footer">
+                  <div class="checkbox-group">
+                    <input type="checkbox" id="terms" neme="terms" required>
+                    <label for="terms" class="gray">
+                      개인정보 수집 활용을 동의합니다.
+                      <a href="#" class="terms-link">전문보기</a>
+                    </label>
                   </div>
-                  <div class="form-group">
-                    <label for="message">문의내용</label>
-                    <textarea name="message" id="message" placeholder="문의내용" rows="6"></textarea>
-                  </div>
-                  <div class="form-footer">
-                    <div class="checkbox-group">
-                      <input type="checkbox" id="terms" neme="terms" required>
-                      <label for="terms" class="gray">
-                        개인정보 수집 활용을 동의합니다.
-                        <a href="#" class="terms-link">전문보기</a>
-                      </label>
-                    </div>
-                  </div>
-                  <button type="button" id="" class="submit-btn">개설 문의하기</button>
-                </form>
+                </div>
+                <button type="button" id="" class="submit-btn">개설 문의하기</button>
+              </form>
             </div>
           </div>
         </section>
-      </div>      
+      </div>
       <script>
         const toggleBtns = document.querySelectorAll(".toggle-btn");
 
@@ -522,16 +577,16 @@
           btn.addEventListener("click", () => {
             console.log("클릭된 버튼", btn.textContent);
 
-            toggleBtns.forEach( b => {
+            toggleBtns.forEach(b => {
               b.classList.remove("active");
             })
 
             btn.classList.add("active");
-           
+
           })
         })
 
-       
+
         const businessBox = document.querySelector('.business-box');
         const businessInput = document.querySelector('input[name=""]');
         const businessLis = document.querySelectorAll('.business-select li');
@@ -581,4 +636,5 @@
   </div>
 </body>
 <script src=""></script>
+
 </html>
