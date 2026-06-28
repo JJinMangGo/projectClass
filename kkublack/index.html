@@ -32,8 +32,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
   <!-- ScrollTrigger 플러그인 (필수!) -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script> -->
 </head>
 
 <body>
@@ -151,7 +151,7 @@
         <h2>꾸블랙치킨</h2>
         <p>1만 시간의 집념으로 제대로 구웠다.</p>
       </section>
-      <script>
+      <!-- <script>
         gsap.registerPlugin(ScrollTrigger);
 
         let wheelScrollCount = 0;
@@ -192,6 +192,55 @@
         }, {
           passive: false
         });
+      </script> -->
+      <script>
+        let wheelScrollCount = 0;
+        let canScroll = true;
+        let isHeroLocked = false;
+        let scrollPosY = 0;
+
+        const heroPanel = document.querySelector('#brand');
+
+        window.addEventListener('wheel', (e) => {
+          const heroRect = heroPanel.getBoundingClientRect();
+          const isHeroVisible = heroRect.top <= 0 && heroRect.bottom >= 0;
+
+          // 첫 진입 시에만 잠금 (wheelScrollCount가 0일 때)
+          if (isHeroVisible && !isHeroLocked && wheelScrollCount === 0) {
+            isHeroLocked = true;
+            scrollPosY = window.scrollY;
+            document.documentElement.style.overflow = 'hidden';
+          }
+
+          // 잠금 중일 때
+          if (isHeroLocked) {
+            e.preventDefault();
+            window.scrollTo(0, scrollPosY);
+
+            if (canScroll) {
+              canScroll = false;
+              wheelScrollCount++;
+
+              if (wheelScrollCount === 1) {
+                heroPanel.classList.add('scroll');
+                console.log('1번');
+              }
+
+              if (wheelScrollCount === 2) {
+                isHeroLocked = false;
+                document.documentElement.style.overflow = 'auto';
+                console.log('2번 - 풀림');
+                // wheelScrollCount는 유지 (다시 진입 안 되도록)
+              }
+
+              setTimeout(() => {
+                canScroll = true;
+              }, 500);
+            }
+          }
+        }, {
+          passive: false
+        });
       </script>
       <div class="banner-wrap heading">
         <div class="banner-track">
@@ -219,6 +268,47 @@
           <div class="num"><strong>0원</strong></div>
         </div>
       </section>
+      <script>
+        // 숫자카운트
+        const counter = (counterElement, max) => {
+          let now = max;
+
+          const handle = setInterval(() => {
+            counterElement.innerHTML = Math.ceil(max - now).toLocaleString() + '원';
+
+            if (now < 1) {
+              clearInterval(handle);
+              counterElement.innerHTML = max.toLocaleString() + '원';
+            }
+
+
+            const step = now / 8;
+            now -= step;
+          }, 30);
+        };
+
+
+        // 스크롤 이벤트
+        const startCountersOnScroll = () => {
+          const numSec = document.querySelector('.count-sec');
+          const numSecOffsetTop = numSec.offsetTop;
+          let started = false;
+
+          const handleScroll = () => {
+            const scrollY = window.scrollY;
+            if (scrollY >= numSecOffsetTop && !started) {
+              const counterElement = document.querySelector('.num strong');
+              counter(counterElement, 101184800);
+              started = true;
+              window.removeEventListener('scroll', handleScroll);
+            }
+          };
+
+          window.addEventListener('scroll', handleScroll);
+        };
+
+        window.addEventListener('load', startCountersOnScroll);
+      </script>
       <!-- <div class="bg-sec">
         <img src="img/s3_bg.jpg" alt="꾸블랙치킨">
       </div> -->
