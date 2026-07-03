@@ -293,6 +293,12 @@ nav a:hover {
   }
 }
 
+@media (max-width: 360px) {
+  .menu-wrap a {
+    font-size: 10px;
+  }
+}
+
 
 /* hero-sec */
 .hero-sec {
