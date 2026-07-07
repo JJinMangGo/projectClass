@@ -304,19 +304,19 @@ nav a:hover {
 
 /* hero-sec */
 .hero-wrap {
-  height: 250lvh;
+  height: 250dvh;
 }
 .hero-sec {
   position: sticky;
   top: 0;
-  /* height: 100dvh; */
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
   /* justify-content: center; */
   width: 100%;
-  height: calc(145lvh- 80px);
+  /* height: calc(145lvh- 80px); */
   padding-top: 120px;
   background: var(--color-black) url(../img/s1_bg.jpg) no-repeat center / cover;
   text-align: center;
@@ -375,7 +375,7 @@ nav a:hover {
 @media (max-width: 1280px) {
   .hero-sec {
     row-gap: 8px;
-    height: calc(100dvh - 80px);
+    /* height: calc(100dvh - 80px); */
     padding-top: 80px;
   }
   .txt-ani {
@@ -413,11 +413,11 @@ nav a:hover {
   }
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .hero-sec {
     height: calc(100dvh - 118px);
   }
-}
+} */
 
 /* banner-wrap */
 .banner-wrap {
