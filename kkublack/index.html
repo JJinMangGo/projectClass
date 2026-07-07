@@ -150,139 +150,35 @@
                 style.paddingTop
             -->
 
-            <section class="hero-sec heading" id="brand">
-                <div class="txt-ani" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1500">
-                    <div><strong>멈출수 없는 맛</strong></div>
-                    <div><strong>불맛을 제대로</strong></div>
-                </div>
-                <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1800">꾸블랙치킨</h2>
-                <p>1만 시간의 집념으로 제대로 구웠다.</p>
-            </section>
+            <div class="hero-wrap">
+                <section class="hero-sec heading" id="brand">
+                    <div class="txt-ani" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1500">
+                        <div><strong>멈출수 없는 맛</strong></div>
+                        <div><strong>불맛을 제대로</strong></div>
+                    </div>
+                    <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1800">꾸블랙치킨</h2>
+                    <p>1만 시간의 집념으로 제대로 구웠다.</p>
+                </section>
+            </div>
             <script>
               // ===== 히어로 등장 연출 (clip-path 열림) =====
               window.addEventListener("load", function() {
                 document.querySelector(".hero-sec").classList.add("open");
               });
-            
-              // ===== 히어로 스크롤 잠금 연출 (PC 휠 + 모바일 터치) =====
-            
-              // --- 상태 변수 ---
-              let wheelScrollCount = 0;   // 스크롤 횟수 (0 → 1 → 2에서 해제)
-              let canScroll = true;       // throttle 스위치 (연타 방지)
-              let isHeroLocked = false;   // 잠금 상태
-              let scrollPosY = 0;         // 잠근 순간의 화면 위치
-              let touchStartY = 0;        // 터치 이전 좌표 (델타 계산용)
-            
-              const heroPanel = document.querySelector('#brand');
-            
-              // --- 공통 로직: wheel과 touch가 같이 씀 ---
-              const handleScrollIntent = (e, deltaY) => {
-                const heroRect = heroPanel.getBoundingClientRect();
-                const isHeroVisible = heroRect.top <= 0 && heroRect.bottom >= 0;
-            
-                // 첫 진입 시에만 잠금 (연출을 아직 안 봤을 때)
-                if (isHeroVisible && !isHeroLocked && wheelScrollCount === 0) {
-                  isHeroLocked = true;
-                  scrollPosY = window.scrollY;
-                  document.documentElement.style.overflow = 'hidden';
-                }
-            
-                // 잠금 중일 때
-                if (isHeroLocked) {
-                  e.preventDefault();
-                  window.scrollTo(0, scrollPosY);
-            
-                  // 미세 움직임(±5 이하)은 무시 — 터치 노이즈 필터
-                  if (canScroll && Math.abs(deltaY) > 5) {
-                    canScroll = false;
-                    wheelScrollCount++;
-            
-                    if (wheelScrollCount === 1) {
-                      heroPanel.classList.add('scroll');
-                      console.log('1번');
-                    }
-            
-                    if (wheelScrollCount === 2) {
-                      isHeroLocked = false;
-                      document.documentElement.style.overflow = 'auto';
-                      console.log('2번 - 풀림');
-                      // wheelScrollCount는 유지 (재진입 방지)
-                    }
-            
-                    setTimeout(() => {
-                      canScroll = true;
-                    }, 500);
-                  }
-                }
-              };
-            
-              // --- PC: 마우스 휠 ---
-              window.addEventListener('wheel', (e) => {
-                handleScrollIntent(e, e.deltaY);
-              }, { passive: false });
-            
-              // --- 모바일: 터치 ---
-              window.addEventListener('touchstart', (e) => {
-                touchStartY = e.touches[0].clientY;
-              }, { passive: false });
-            
-              window.addEventListener('touchmove', (e) => {
-                const touchY = e.touches[0].clientY;
-                const deltaY = touchStartY - touchY;  // 위로 쓸기 = 아래로 스크롤 = 양수
-                touchStartY = touchY;                 // 다음 델타 계산을 위해 갱신
-            
-                handleScrollIntent(e, deltaY);
-              }, { passive: false });
-            
-              // --- 새로고침 대응: 맨 위가 아니면 연출 완료 상태로 시작 ---
-              window.addEventListener('load', () => {
-                requestAnimationFrame(() => {
-                  if (window.scrollY > 0) {
-                    wheelScrollCount = 2;                  // "이미 봤음" 처리
-                    heroPanel.classList.add('scroll');     // 화면도 완료 상태로 일치
-                  }
-                });
-              });
-                // wheel이벤트안에서 preventDefault()를 사용할 것이다 라고 브라우저에게 알림
-                // wheel, touch이벤트에서는 기본적으로 스크롤을 막지 않을거지? 라고 동작함
 
-          /*      gsap.registerPlugin(ScrollTrigger);
-
-                let wheelScrollCount = 0;
-                let canScroll = true; // throttle 플래그
-        
-                const heroPanel = document.querySelector('#brand');
-        
-                const scrollTrigger = ScrollTrigger.create({
-                  trigger: heroPanel,
-                  start: 'top top',
-                  pin: true,
-                  pinSpacing: false
-                });
-        
-               window.addEventListener('wheel', (e) => {
-                if (scrollTrigger.isActive) {
-                  e.preventDefault();        // 고정 중엔 항상 스크롤 차단
-        
-                  if (!canScroll) return;    // throttle은 카운트만 제어
-        
-                  canScroll = false;
-                  wheelScrollCount++;
-        
-                  if (wheelScrollCount === 1) {
-                    heroPanel.classList.add('scroll');
-                  }
-        
-                  if (wheelScrollCount === 2) {
-                    scrollTrigger.disable();
-                    wheelScrollCount = 0;
-                  }
-        
-                  setTimeout(() => {
-                    canScroll = true;
-                  }, 250);
-                }
-              }, { passive: false }); */
+            const heroPanel = document.querySelector('#brand');
+            const heroWrap = document.querySelector('.hero-wrap');
+            
+            window.addEventListener('scroll', () => {
+              const passed = -heroWrap.getBoundingClientRect().top;
+              const range = heroWrap.offsetHeight - window.innerHeight;
+            
+              let progress = passed / range;
+              progress = Math.min(Math.max(progress, 0), 1);
+            
+              heroPanel.style.setProperty('--progress', progress);
+            });
+         
            </script>
            <!-- 
             사용자가 휠을 돌림
