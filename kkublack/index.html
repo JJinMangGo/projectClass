@@ -152,11 +152,11 @@
 
             <div class="hero-wrap">
                 <section class="hero-sec heading" id="brand">
-                    <div class="txt-ani" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1500">
+                    <div class="txt-ani" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1500" data-aos-once="true">
                         <div><strong>멈출수 없는 맛</strong></div>
                         <div><strong>불맛을 제대로</strong></div>
                     </div>
-                    <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1800">꾸블랙치킨</h2>
+                    <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1800" data-aos-once="true">꾸블랙치킨</h2>
                     <p>1만 시간의 집념으로 제대로 구웠다.</p>
                 </section>
             </div>
@@ -168,10 +168,11 @@
 
             const heroPanel = document.querySelector('#brand');
             const heroWrap = document.querySelector('.hero-wrap');
+                
             
             window.addEventListener('scroll', () => {
               const passed = -heroWrap.getBoundingClientRect().top;
-              const range = heroWrap.offsetHeight - window.innerHeight;
+              const range = heroWrap.offsetHeight - heroPanel.offsetHeight;
             
               let progress = passed / range;
               progress = Math.min(Math.max(progress, 0), 1);
