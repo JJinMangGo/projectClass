@@ -304,7 +304,7 @@ nav a:hover {
 
 /* hero-sec */
 .hero-wrap {
-  height: 200dvh;
+  height: 250lvh;
 }
 .hero-sec {
   position: sticky;
@@ -316,7 +316,7 @@ nav a:hover {
   row-gap: 1rem;
   /* justify-content: center; */
   width: 100%;
-  height: calc(145dvh - 80px);
+  height: calc(145lvh- 80px);
   padding-top: 120px;
   background: var(--color-black) url(../img/s1_bg.jpg) no-repeat center / cover;
   text-align: center;
