@@ -375,9 +375,9 @@ nav a:hover {
   .txt-ani {
     height: 106px;
   }
-  .hero-sec.scroll .txt-ani > div {
+  /* .hero-sec.scroll .txt-ani > div {
     transform: translateY(-106px);
-  }
+  } */
   .hero-sec strong,
   .hero-sec h2 {
     font-size: 106px;
@@ -395,9 +395,9 @@ nav a:hover {
   .txt-ani {
     height: 65px;
   }
-  .hero-sec.scroll .txt-ani > div {
+  /* .hero-sec.scroll .txt-ani > div {
     transform: translateY(-65px);
-  }
+  } */
   .hero-sec strong,
   .hero-sec h2 {
     font-size: 65px;
