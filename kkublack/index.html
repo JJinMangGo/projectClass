@@ -31,8 +31,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
      <!-- ScrollTrigger 플러그인 (필수!) -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script> -->
 </head>
 <body>
     <div id="wrap">
@@ -163,7 +163,7 @@
                     document.querySelector(".hero-sec").classList.add("open");
                 })           
            
-         /*     let progress = 0;
+              let progress = 0;
                 let isHeroLocked = false;
                 let scrollPosY = 0;
                 const TOTAL = 1200;
@@ -238,11 +238,11 @@
                             document.documentElement.style.overflow = "auto";
                         }
                     }
-                }, {passive : false}); */
+                }, {passive : false}); 
                 // wheel이벤트안에서 preventDefault()를 사용할 것이다 라고 브라우저에게 알림
                 // wheel, touch이벤트에서는 기본적으로 스크롤을 막지 않을거지? 라고 동작함
 
-                gsap.registerPlugin(ScrollTrigger);
+          /*      gsap.registerPlugin(ScrollTrigger);
 
                 let wheelScrollCount = 0;
                 let canScroll = true; // throttle 플래그
@@ -278,7 +278,7 @@
                     canScroll = true;
                   }, 250);
                 }
-              }, { passive: false });
+              }, { passive: false }); */
            </script>
            <!-- 
             사용자가 휠을 돌림
