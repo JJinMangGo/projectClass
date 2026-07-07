@@ -305,7 +305,7 @@ nav a:hover {
 
 /* hero-sec */
 .hero-wrap {
-  height: 250dvh;
+  height: 100dvh;
 }
 .hero-sec {
   position: sticky;
