@@ -656,9 +656,9 @@ nav a:hover {
     font-size: 18px;
     font-weight: 500;
   }
-  /* .intro-sec p:nth-child(2) {
-    font-size: 14px;
-  } */
+  .intro-sec .mobile {
+        display: none;
+    }
 }
 
 /* interior-sec */
