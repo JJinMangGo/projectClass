@@ -74,10 +74,13 @@
 
 html {
   font-size: 100%;
+  /* 0703-수정 */
+  overflow-x: clip;
 }
 
 body {
   color: var(--color-black);
+  overflow-x: clip;
 }
 
 #wrap {
@@ -544,29 +547,21 @@ nav a:hover {
 
 
 
-/* bg-sec */
-.bg-sec {
-  width: 100%;
-  height: 100dvh;
-}
-.bg-sec img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
 
 
-html {
-  overflow-y: scroll;
-}
+
 /* intro-sec - bg박스 추가 */
+.sec-wrap {
+  /* 0703-추가작업 */
+  position: relative;
+}
 .bg {    
   position: sticky;
   top: 0; 
   z-index: 1;
   width: 100%;
   height: 150dvh;
-  background: url(../img/s3_bg.jpg) no-repeat fixed center / cover;
+  background: url(../img/s3_bg.jpg) no-repeat scroll center / cover;
   
 }
 @media (max-width: 820px) {
@@ -575,6 +570,12 @@ html {
   }
 }
 .intro-sec {   
+  /* 0703-추가작업 */
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+
   padding: 140px 1.25rem 60px;
   background-color: var(--color-white);
 }
@@ -668,6 +669,9 @@ html {
 /* interior-sec */
 .pd {
   padding: 140px 0;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
 }
 .interior-sec {  
   padding-bottom: 0;
