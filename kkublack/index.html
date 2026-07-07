@@ -158,87 +158,91 @@
                 <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1800">꾸블랙치킨</h2>
                 <p>1만 시간의 집념으로 제대로 구웠다.</p>
             </section>
-            <script> // 히어로섹션 클립패스 스크립트
-                window.addEventListener("load", function() {
-                    document.querySelector(".hero-sec").classList.add("open");
-                })           
-           
-              let progress = 0;
-                let isHeroLocked = false;
-                let scrollPosY = 0;
-                const TOTAL = 1200;
-                let isUnlocking = false;
-                const heroPanel = document.querySelector("#brand");
-
-                window.addEventListener('wheel', (e) => {                
-                    // 마우스 휠을 아래로 휠 양수(true), 위로 휠 음수(false)
-                    // 아래인지, 위인지를 판단하는 것
-                    const goingDown = e.deltaY > 0;
-                    // console.log(e.deltaY);
-                    // getBoundingClientRect() 현재요소가 화면의 어디에 있는지 알려주는 함수
-                    const heroRect = heroPanel.getBoundingClientRect();
-                    // console.log(heroRect);
-                    // 요소의 아래쪽 끝이 화면의 맨 위(0px)에서 얼마나 떨어져 있는지 heroRect.bottom
-                    // 히어로 화면 아래쪽 끝이 아직 화면 위보다 아래에 있다면 true, 즉 화면에 아직 보이는 상태
-                    bottom = -50;
-                    const isHeroVisible = heroRect.bottom > 0;
-
-                    // 일반 스크롤 상태일때만 실행 
-                    if(!isHeroLocked) {
-                        // 아래로 스크롤 + hero섹션보임 + 아직애니메이션이 안끝남을 모두 만족
-                        const lockDown = goingDown && isHeroVisible && progress < 1;
-                        // 위로 스크롤 + 맨위 + 애니메이션이 끝난 상태이면 역재생
-                        const lockUp = !goingDown && window.scrollY <= 0 && progress > 0;
-
-                        // 아래 또는 위 조건이 만족된 경우 (둘중하나만 만족이되면)
-                        if (lockDown || lockUp) {
-                            // 스크롤 잠금 상태
-                            isHeroLocked = true;
-                            // 이전 예약남았다면 초기화
-                            isUnlocking = false;
-                            // 현재위치 저장 후 hidden(페이지 이동화면을 막음)
-                            scrollPosY = window.scrollY;
-                            document.documentElement.style.overflow = "hidden";
-                        }
+            <script>
+              // ===== 히어로 등장 연출 (clip-path 열림) =====
+              window.addEventListener("load", function() {
+                document.querySelector(".hero-sec").classList.add("open");
+              });
+            
+              // ===== 히어로 스크롤 잠금 연출 (PC 휠 + 모바일 터치) =====
+            
+              // --- 상태 변수 ---
+              let wheelScrollCount = 0;   // 스크롤 횟수 (0 → 1 → 2에서 해제)
+              let canScroll = true;       // throttle 스위치 (연타 방지)
+              let isHeroLocked = false;   // 잠금 상태
+              let scrollPosY = 0;         // 잠근 순간의 화면 위치
+              let touchStartY = 0;        // 터치 이전 좌표 (델타 계산용)
+            
+              const heroPanel = document.querySelector('#brand');
+            
+              // --- 공통 로직: wheel과 touch가 같이 씀 ---
+              const handleScrollIntent = (e, deltaY) => {
+                const heroRect = heroPanel.getBoundingClientRect();
+                const isHeroVisible = heroRect.top <= 0 && heroRect.bottom >= 0;
+            
+                // 첫 진입 시에만 잠금 (연출을 아직 안 봤을 때)
+                if (isHeroVisible && !isHeroLocked && wheelScrollCount === 0) {
+                  isHeroLocked = true;
+                  scrollPosY = window.scrollY;
+                  document.documentElement.style.overflow = 'hidden';
+                }
+            
+                // 잠금 중일 때
+                if (isHeroLocked) {
+                  e.preventDefault();
+                  window.scrollTo(0, scrollPosY);
+            
+                  // 미세 움직임(±5 이하)은 무시 — 터치 노이즈 필터
+                  if (canScroll && Math.abs(deltaY) > 5) {
+                    canScroll = false;
+                    wheelScrollCount++;
+            
+                    if (wheelScrollCount === 1) {
+                      heroPanel.classList.add('scroll');
+                      console.log('1번');
                     }
-
-                    // 잠겨있는 동안 실행(잠긴상태에서만)
-                    if(isHeroLocked) {
-                        // 기본스크롤(해당이벤트)을 막음
-                        e.preventDefault();
-                        // 스크롤 위치 고정(아까 저장한 위치로 계속 되돌려야 화면이 움직이지 않음)
-                        window.scrollTo(0, scrollPosY);
-                        // 120 / 1200 = 0.1 prgoress가 0.1,0.2,0.3으로 증가
-                        progress += e.deltaY / TOTAL;
-                        // -0.2면 0 1이 넘어가면 1로 제한하여 변환
-                        progress = Math.min(Math.max(progress, 0), 1);
-                        // css로 적용
-                        heroPanel.style.setProperty("--progress", progress);
-
-                        // 애니메이션 끝남 아직 스크롤 해제를 예약하지 않았다면 실행 
-                        if(progress >= 1 && !isUnlocking) {
-                            // 중복예약막기
-                            isUnlocking = true;
-
-                            setTimeout(() => {
-                                // 사용자가 다시 위로 돌리지 않았다면
-                                if(progress >= 1) {
-                                    // 잠금을 해제하자
-                                    isHeroLocked = false;
-                                    document.documentElement.style.overflow = "auto";
-                                }
-                                // 예약상태를 초기화
-                                isUnlocking = false;
-                            }, 600);
-                        }   
-
-                        // 역재생종료 - 잠금해제후 일반스크롤로 돌아감
-                        if(progress <= 0) {
-                            isHeroLocked = false;
-                            document.documentElement.style.overflow = "auto";
-                        }
+            
+                    if (wheelScrollCount === 2) {
+                      isHeroLocked = false;
+                      document.documentElement.style.overflow = 'auto';
+                      console.log('2번 - 풀림');
+                      // wheelScrollCount는 유지 (재진입 방지)
                     }
-                }, {passive : false}); 
+            
+                    setTimeout(() => {
+                      canScroll = true;
+                    }, 500);
+                  }
+                }
+              };
+            
+              // --- PC: 마우스 휠 ---
+              window.addEventListener('wheel', (e) => {
+                handleScrollIntent(e, e.deltaY);
+              }, { passive: false });
+            
+              // --- 모바일: 터치 ---
+              window.addEventListener('touchstart', (e) => {
+                touchStartY = e.touches[0].clientY;
+              }, { passive: false });
+            
+              window.addEventListener('touchmove', (e) => {
+                const touchY = e.touches[0].clientY;
+                const deltaY = touchStartY - touchY;  // 위로 쓸기 = 아래로 스크롤 = 양수
+                touchStartY = touchY;                 // 다음 델타 계산을 위해 갱신
+            
+                handleScrollIntent(e, deltaY);
+              }, { passive: false });
+            
+              // --- 새로고침 대응: 맨 위가 아니면 연출 완료 상태로 시작 ---
+              window.addEventListener('load', () => {
+                requestAnimationFrame(() => {
+                  if (window.scrollY > 0) {
+                    wheelScrollCount = 2;                  // "이미 봤음" 처리
+                    heroPanel.classList.add('scroll');     // 화면도 완료 상태로 일치
+                  }
+                });
+              });
                 // wheel이벤트안에서 preventDefault()를 사용할 것이다 라고 브라우저에게 알림
                 // wheel, touch이벤트에서는 기본적으로 스크롤을 막지 않을거지? 라고 동작함
 
