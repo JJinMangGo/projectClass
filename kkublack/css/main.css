@@ -335,36 +335,36 @@ nav a:hover {
   color: var(--color-red-primary);
   line-height: 1;
 }
-/* .hero-sec.scroll .txt-ani > div {
+.hero-sec.scroll .txt-ani > div {
   transform: translateY(0);
   transition: 0.5s;
 }
 .hero-sec.scroll .txt-ani > div {
   transform: translateY(-170px);
-} */
+} 
 
-.hero-sec .txt-ani > div {
+/* .hero-sec .txt-ani > div {
   transform: translateY(calc(var(--progress, 0) * -100%));
   transition: transform 0.15s ease-out;
-}
+} */
 
 .hero-sec p {
   margin-top: 1rem;
   font-size: 54px;
   font-weight: 800;
   color: var(--color-white);
-  /* opacity: 0; */
+  opacity: 0;
   letter-spacing: -0.02em;
-  /* transform: translateY(54px);
-  transition: 0.5s 0.5s; */
-  opacity: calc(var(--progress, 0) * 0.8);
+  transform: translateY(54px);
+  transition: 0.5s 0.5s;
+  /* opacity: calc(var(--progress, 0) * 0.8);
   transform: translateY(calc((1 - var(--progress, 0)) * 54px));
-  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out; */
 }
-/* .hero-sec.scroll p {
+.hero-sec.scroll p {
   opacity: 0.8;
   transform: translateY(0);
-} */
+}
 
 @media (max-width: 1280px) {
   .hero-sec {
@@ -375,9 +375,9 @@ nav a:hover {
   .txt-ani {
     height: 106px;
   }
-  /* .hero-sec.scroll .txt-ani > div {
+  .hero-sec.scroll .txt-ani > div {
     transform: translateY(-106px);
-  } */
+  }
   .hero-sec strong,
   .hero-sec h2 {
     font-size: 106px;
@@ -395,9 +395,9 @@ nav a:hover {
   .txt-ani {
     height: 65px;
   }
-  /* .hero-sec.scroll .txt-ani > div {
+  .hero-sec.scroll .txt-ani > div {
     transform: translateY(-65px);
-  } */
+  }
   .hero-sec strong,
   .hero-sec h2 {
     font-size: 65px;
