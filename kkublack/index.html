@@ -1,760 +1,837 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>꾸블랙치킨</title>
-  <meta name="author" content="꾸블랙치킨">
-  <meta name="description" content="ONE BITE NO BREAKS 멈출 수 없는 맛! 꾸블랙치킨">
-  <meta name="keyword" content="ONE BITE NO BREAKS 멈출 수 없는 맛! 꾸블랙치킨">
-  <meta name="classification" content="ONE BITE NO BREAKS 멈출 수 없는 맛! 꾸블랙치킨">
-  <meta property="og:type" content="website">
-  <!-- video, movie -->
-  <!-- https://developers.kakao.com/tool/debugger/sharing -->
-  <meta property="og:title" content="꾸블랙치킨">
-  <meta property="og:description" content="ONE BITE NO BREAKS 멈출 수 없는 맛! 꾸블랙치킨">
-  <!-- 300자내외 -->
-  <meta property="og:url" content="https://kkublack.com/index.php">
-  <meta property="og:image"
-    content="https://kkublack.com/storage/site/79c32e8e3a5413f8fe897e5f1c3d8327_oWY6qUGB_c18afe96708fac2c91f7db2130a63d614554dfee.png">
-  <!-- og이미지 사이즈 1200 * 630 -->
-  <link rel="shortcut icon" type="image/x-icon"
-    href="https://kkublack.com//storage/site/79c32e8e3a5413f8fe897e5f1c3d8327_Ge7ZgWNU_2b193835a6fc1108488d9489bf378be7cbccd327.png">
-  <link rel="canonical" href="https://kkublack.com/index.php">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>꾸블랙치킨</title>
+    <meta name="author" content="꾸블랙치킨">
+    <meta name="description" content="ONE BITE NO BREAKS 멈출 수 없는 맛! 꾸블랙치킨">
+    <meta name="keyword" content="ONE BITE NO BREAKS 멈출 수 없는 맛! 꾸블랙치킨">
+    <meta name="classification" content="ONE BITE NO BREAKS 멈출 수 없는 맛! 꾸블랙치킨">
+    <meta property="og:type" content="website">
+    <!-- video, movie -->
+    <!-- https://developers.kakao.com/user/register 공유디버거 -->
+    <meta property="og:title" content="꾸블랙치킨">
+    <meta property="og:description" content="ONE BITE NO BREAKS 멈출 수 없는 맛! 꾸블랙치킨">
+    <!-- 설명하는 내용임. 300자 내외로 작성 -->
+    <meta property="og:url" content="https://kkublack.com/index.php">
+    <meta property="og:image" content="https://kkublack.com/storage/site/79c32e8e3a5413f8fe897e5f1c3d8327_oWY6qUGB_c18afe96708fac2c91f7db2130a63d614554dfee.png">
+    <!-- og이미지 사이즈 1200 *630  -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://kkublack.com//storage/site/79c32e8e3a5413f8fe897e5f1c3d8327_Ge7ZgWNU_2b193835a6fc1108488d9489bf378be7cbccd327.png">
+    <link rel="canonical" href="https://kkublack.com/index.php">
+    <!-- 내가 만드는 사이트 이미지로 바꿔서 작성하면 됨. -->
 
-  <link rel="stylesheet" href="../assets/css/paper.css">
-  <link rel="stylesheet" href="../assets/css/font.css">
-  <link rel="stylesheet" href="../css/default.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="../assets/css/paper-font.css">
+    <link rel="stylesheet" href="../assets/css/font.css">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
 
-  <link rel="stylesheet" href="css/main.css">
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
-
 <body>
-  <div id="wrap">
-    <header>
-      <div class="inner h-in">
-        <h1><a href="index.html"><img src="img/logo_white.svg" alt="꾸블랙치킨"></a></h1>
-        <nav>
-          <h2 class="sr-only">창업</h2>
-          <ul>
-            <li><a href="#brand">브랜드소개</a></li>
-            <li><a href="#competi">브랜드경쟁력</a></li>
-            <li><a href="#franchise">창업경쟁력</a></li>
-            <li><a href="#guide">창업안내</a></li>
-            <li><a href="#price">창업비용 및 문의</a></li>
-          </ul>
-        </nav>
-        <div class="mo-navi">
-          <div class="mo-navi-box">
-            <!-- menu-btn을 클릭했을 때 is-open toggle클래스 -->
-            <h2><span>창업</span></h2>
-            <ul class="">
-              <!-- h2를 클릭했을 때 나오는 is-open toggleClass -->
-              <li><a href="#brand">브랜드소개</a></li>
-              <li><a href="#competi">브랜드경쟁력</a></li>
-              <li><a href="#franchise">창업경쟁력</a></li>
-              <li><a href="#guide">창업안내</a></li>
-              <li><a href="#price">창업비용 및 문의</a></li>
-            </ul>
-          </div>
-          <button class="menu-btn">
-            <!-- is-open toggle클래스 -->
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </div>
-    </header>
-    <script>
-      // querySelectorAll()
-      const menuBtn = document.querySelector(".menu-btn");
-      const moNaviBox = document.querySelector(".mo-navi-box");
-
-
-      // menuBtn.addEventListener("click", function() {
-      //   console.log("클릭되었당")
-      // })
-
-      // 화살표함수 add, remove, toggle
-      menuBtn.addEventListener("click", () => {
-        menuBtn.classList.toggle("is-open");
-        moNaviBox.classList.toggle("is-open");
-
-        if (menuBtn.classList.contains("is-open")) {
-          console.log("열려있어!")
-        } else {
-          console.log("닫혀있어!")
-        }
-      })
-
-      const h2 = document.querySelector(".mo-navi-box h2");
-      const ul = document.querySelector(".mo-navi-box ul");
-
-      h2.addEventListener("click", () => {
-        ul.classList.toggle("is-open");
-      })
-      
-      
-      // 모바일 네비 a를 클릭했을 때 moNaviBox가 is-open클래스 삭제  menuBtn .is-open클래스 삭제 , h2요소 is-open삭제
-      const moNaviLinks = document.querySelectorAll(".mo-navi-box ul a");
-      moNaviLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          menuBtn.classList.remove("is-open");
-          moNaviBox.classList.remove("is-open");
-          ul.classList.remove("is-open");
-        })
-      })
-    </script>
-    <!-- 
-      menuBtn.classList.add() - 클래스 추가만 함
-      menuBtn.classList.remove() - 클래스 제거만 함
-      menuBtn.classList.toggle() - 있으면 제거, 없으면 추가함
-      menuBtn.classList.replace("is-open", "is-closed") - 클래스를 다른걸로 바꿈
-    -->
-    <main>
-      <ul class="menu-wrap">
-        <li class="active"><a href="#brand">브랜드소개</a></li>
-        <li><a href="#competi">브랜드경쟁력</a></li>
-        <li><a href="#franchise">창업경쟁력</a></li>
-        <li><a href="#guide">창업안내</a></li>
-        <li><a href="#price">창업비용 및 문의</a></li>
-      </ul>     
-      <section class="hero-sec heading " id="brand">
-        <div class="txt-ani" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1500">
-          <div><strong>멈출수 없는 맛</strong></div>
-          <div><strong>불맛을 제대로</strong></div>
-        </div>
-        <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1800">꾸블랙치킨</h2>
-        <p>1만 시간의 집념으로 제대로 구웠다.</p>
-      </section>           
-      <script>
-        window.addEventListener("load", function() {
-          document.querySelector(".hero-sec").classList.add("open");
-        })
-
-      let progress = 0;          // 0 ~ 1 진행률
-      let isHeroLocked = false;
-      let scrollPosY = 0;
-      const TOTAL = 1200;        // 델타가 이만큼 쌓이면 잠금 해제 (감도 조절값)
-      let isUnlocking = false;
-
-      const heroPanel = document.querySelector('#brand');
-
-      window.addEventListener('wheel', (e) => {
-        const heroRect = heroPanel.getBoundingClientRect();
-        const isHeroVisible = heroRect.bottom > 0;
-
-        if (isHeroVisible && !isHeroLocked && progress === 0) {
-          isHeroLocked = true;
-          scrollPosY = window.scrollY;
-          document.documentElement.style.overflow = 'hidden';
-        }
-
-        if (isHeroLocked) {
-          e.preventDefault();
-          window.scrollTo(0, scrollPosY);
-
-          progress += e.deltaY / TOTAL;
-          progress = Math.min(Math.max(progress, 0), 1);
-          
-          heroPanel.style.setProperty('--progress', progress);
-
-          if (progress >= 1 && !isUnlocking) {
-          isUnlocking = true;
-
-          setTimeout(() => {
-            isHeroLocked = false;
-            document.documentElement.style.overflow = 'auto';
-            console.log('해제');
-          }, 600);   // 애니메이션 다 끝나고 잠깐 머문 후 풀림
-        }
-      }
-    }, { passive: false });
-      </script>
-      <div class="banner-wrap heading">
-        <div class="banner-track">
-          <div class="banner-item">
-            <span class="banner-text">one bite, no breaks </span>
-            <span class="banner-text">one bite, no breaks </span>
-            <span class="banner-text">one bite, no breaks </span>
-            <span class="banner-text">one bite, no breaks </span>
-          </div>
-          <div class="banner-item">
-            <span class="banner-text">one bite, no breaks </span>
-            <span class="banner-text">one bite, no breaks </span>
-            <span class="banner-text">one bite, no breaks </span>
-            <span class="banner-text">one bite, no breaks </span>
-          </div>
-        </div>
-      </div>
-      <section class="count-sec">
-        <div class="txt-box">
-          <h2 class="heading tit">꾸블랙은 지금도 <span>웨이팅 중</span></h2>
-          <p>오로지 치킨 하나로 줄 세우는 곳</p>
-        </div>
-        <div class="count-txt heading">
-          <p>오픈 한달만에 1억 돌파!</p>
-          <div class="num"><strong>0원</strong></div>
-        </div>
-      </section>
-
-      <script>
-        const counter = (counterElement, max) => {
-          let now = max; // max에서 시작해서 0을 향해 줄어듦
-
-          // 30ms(0.03초)마다 반복실행
-          const handle = setInterval(() => {
-            // 화면에 표시 (목표 - 남은 거리) = 지금까지 올라온 숫자
-            // toLocaleString는 콤마찍어주는 함수
-            counterElement.innerHTML = Math.ceil(max-now).toLocaleString() + "원";
-
-            // 남은 거리가 1보다 작아지면 = 거의 도착했으면
-            if(now < 1) {
-              clearInterval(handle); // 반복 멈추기
-              // 마지막에 정확하게 목표값 맞추기
-              counterElement.innerHTML = max.toLocaleString() + "원";
-            }
-            // 남은 거리 1/8만큼씩 이동 남은거리가 클수록 빠르고, 줄어들수록 작아짐
-            const step = now / 8;
-            now -= step;
-
-          }, 30)
-        }
-
-        // const numEl = document.querySelector(".num strong");
-        // counter(numEl, 100_000_000); 
-
-        // counterElement 숫자를 표시할 html요소
-        // max 최종 목표 숫자
-
-        // 스크롤이벤트
-        const startCountersOnScroll = () => {
-          const numSec = document.querySelector(".count-sec");
-          // count-sec이 문서 위에서 몇px떨어졌는지 측정 (고정값)
-          const numSecOffsetTop = numSec.offsetTop;
-          // 이미 실행했는지 체크하는 스위치
-          let started = false;
-
-          // 스크롤 할 때마다 실행될 함수
-          const handleScroll = () => {
-            // 지금 얼마나 스크롤했는지 측정(변하는 값)
-            const scrollY = window.scrollY;
-            if(scrollY >= numSecOffsetTop && !started) {
-              const counterElement = document.querySelector(".num strong");
-              counter(counterElement, 101184800);
-              // 다시는 실행안함
-              started = true;
-
-              // 스크롤 이벤트 해제
-              window.removeEventListener("scroll", handleScroll);
-            }
-          };
-          // 스크롤 될때마다 handleScroll을 실행
-          window.addEventListener("scroll", handleScroll);
-        };
-        // 페이지가 완전히 로드된후 함수실행
-        window.addEventListener('load', startCountersOnScroll);  
-      </script>
-     
-      <!-- <div class="bg-sec">
-        <img src="img/s3_bg.jpg" alt="꾸블랙치킨">
-      </div> -->
-
-      <div class="sec-wrap">
-        <div class="bg">
-          <section class="intro-sec">
-            <div class="inner">
-              <h2 class="heading">
-                <span>NEW ORIGIN</span>
-                <span>KKUBLACK</span>
-              </h2>
-              <div class="txt-box">
-                <p>치밥, 사리, 토핑으로 유명한 숯불치킨은 많은데 왜 ‘불맛’으로 기억되는 숯불치킨은 없을까?</p>
-                <p>세상엔 수많은 숯불치킨이 있지만, 우리는 가장 기본인 ‘불맛’의 본질에 집중했습니다. F&B 전문가들이 모여 전통 숯불의 깊은 풍미를 재해석하고, 현대적 기술을 접목해 숯불의 향 ·
-                  불의 온도 · 소스의 균형을 치밀하게 설계했습니다. 인위적인 향이 아닌 진짜 숯으로 완성한 압도적인 맛의 차이. 오직 꾸블랙에서만 경험할 수 있는, 입안 가득 부드럽고 은은하게 퍼지는
-                  진짜 숯불향을 느껴보세요.</p>
-              </div>
-            </div>
-          </section>
-        </div>
-        <section class="interior-sec pd" id="competi">
-          <h2 class="heading tit">
-            <span>공간 본질에 집중한 감도높은</span>
-            <span>모던 레트로 인테리어</span>
-          </h2>
-          <div class="swiper g-slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="img/s7_img1.jpg" alt="인테리어" class="pc-img">
-                <img src="img/s7_img1_mo.jpg" alt="인테리어" class="mo-img">
-              </div>
-              <div class="swiper-slide">
-                <img src="img/s7_img2.jpg" alt="인테리어" class="pc-img">
-                <img src="img/s7_img2_mo.jpg" alt="인테리어" class="mo-img">
-              </div>
-              <div class="swiper-slide">
-                <img src="img/s7_img3.jpg" alt="인테리어" class="pc-img">
-                <img src="img/s7_img3_mo.jpg" alt="인테리어" class="mo-img">
-              </div>
-              <div class="swiper-slide">
-                <img src="img/s7_img4.jpg" alt="인테리어" class="pc-img">
-                <img src="img/s7_img4_mo.jpg" alt="인테리어" class="mo-img">
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-        </section>
-        <script>
-          const swiper = new Swiper('.g-slider', {
-            loop: true,
-            pagination: {
-              el: '.g-slider .swiper-pagination',
-            },
-            navigation: {
-              nextEl: '.g-slider .swiper-button-next',
-              prevEl: '.g-slider .swiper-button-prev',
-            },
-          })
-        </script>
-        <section class="merit-sec pd" id="franchise" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300" data-aos-easing="ease-out" data-aos-once="true">
-          <div class="inner">
-            <div class="txt-box">
-              <h2 class="heading tit">
-                <span>1만 시간의 노하우를</span>
-                <span>단 3가지 기술에 압축했습니다</span>
-              </h2>
-              <p>초보 점주님이 만들어도 고객에게 가는 맛의 감동은 늘 똑같도록.<br>
-                획일화된 맛을 쉽고 빠르게 구현하는 꾸블랙만의 기술력</p>
-            </div>
-            <ul>
-              <li data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="0">
-                <div class="img-box">
-                  <img src="img/s10_img1.jpg" alt="꾸블랙치킨">
-                  <strong>초벌</strong>
-                </div>
-                <div class="sub-box">
-                  <h3>꾸블랙 전용 초벌기</h3>
-                  <p>섬세한 온도 제어로 불향의 디테일을 완성</p>
-                </div>
-              </li>
-              <li data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
-                <div class="img-box">
-                  <img src="img/s10_img2.jpg" alt="꾸블랙치킨">
-                  <strong>소스</strong>
-                </div>
-                <div class="sub-box">
-                  <h3>규격화 시그니처 소스</h3>
-                  <p>세밀한 조제로 맛의 편차를 원천 차단</p>
-                </div>
-              </li>
-              <li data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="600">
-                <div class="img-box">
-                  <img src="img/s10_img3.jpg" alt="꾸블랙치킨">
-                  <strong>조리</strong>
-                </div>
-                <div class="sub-box">
-                  <h3>스마트 자동조리기</h3>
-                  <p>버튼 하나로 본점의 화력을 그대로 재현</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section class="youtube-sec pd" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-          <h2 class="heading tit">
-            <span>22평 매장에서 억대매출 달성!</span>
-            <span>비법은 빠른 조리과정에 있습니다</span>
-          </h2>
-          <div class="media">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JrRyUu3Q1wE?si=Qzj_QBXMAAxy3ioM"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
-          <div class="sub-tit">
-            <p>6마리 완성에 <span>단 8분!</span></p>
-            <p>주문부터 서빙까지 <span>단 9분!</span> </p>
-          </div>
-        </section>
-        <section class="benefit-sec pd" id="guide">
-          <div class="inner">
-            <div class="txt-box">
-              <h2 class="heading tit">성원에 감사드립니다.</h2>
-              <p>부산본점 오픈과 함께 지금까지 수많은 가맹 문의가 이어졌으나<br>
-                무분별한 빠른 확장보다, 가맹점과 함께 성장할 수 있는 체계를 만들기 위해 준비에 집중하였습니다.<br>이제 그 기다림에 보답하며, 단 한 번의 창업 프로모션을 시작합니다.</p>
-            </div>
-            <ul>
-              <li class="r-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="0">
-                <strong class="heading">500만원</strong>
-                <span>가맹비 전액면제</span>
-              </li>
-              <li class="r-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
-                <strong class="heading">200만원</strong>
-                <span>교육비 전액면제</span>
-              </li>
-              <li class="r-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="600">
-                <strong class="heading">300만원</strong>
-                <span>보증금 전액면제</span>
-              </li>
-              <li class="r-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="900">
-                <strong class="heading">500만원</strong>
-                <span>인테리어 비용 평당 50만원 할인</span>
-                <span class="star" style="color: var(--color-gray-500);">10평 기준</span>
-              </li>
-              <li class="r-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1200">
-                <strong class="heading">로열티, 광고비 면제</strong>
-                <span>3.3% 로열티 및 광고분담금 한시적 면제</span>
-              </li>
-              <li class="y-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1500">
-                <strong class="heading">오픈마케팅 지원</strong>
-                <span>블로그체험단, 채널광고 등</span>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section class="franc-sec pd" id="price" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-          <div class="inner">
-            <div class="txt-box">
-              <h2 class="heading tit">신규창업 비용</h2>
-              <p>본사 마진만 남는 거품 비용은 확 빼고 창업비용만 남겼습니다.</p>
-            </div>
-            <div class="scroll-box">
-              <table>
-                <col>
-                <col>
-                <col>
-                <col>
-                <thead>
-                  <tr>
-                    <th>구분</th>
-                    <th>내용</th>
-                    <th>금액</th>
-                    <th>프로모션가</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <td colspan="4">
-                      <div>합계 <strong>3,650</strong>만원 <span>(5,600만원)</span></div>
-                    </td>
-                    <!-- <td></td>
-                    <td></td>
-                    <td></td> -->
-                  </tr>
-                </tfoot>
-                <tbody>
-                  <tr>
-                    <th>가맹비</th>
-                    <td>브랜드 상호 및 상표사용권, 영업권 보장 등</td>
-                    <td class="arrow"><b>500만원</b></td>
-                    <td class="bold"><em>한시적면제</em></td>
-                  </tr>
-                  <tr>
-                    <th>교육비</th>
-                    <td>제조 / 운영 / 서비스</td>
-                    <td class="arrow"><b>200만원</b></td>
-                    <td class="bold"><em>한시적면제</em></td>
-                  </tr>
-                  <tr>
-                    <th>이행보증금</th>
-                    <td>각종 계약관련 이행 보증금</td>
-                    <td class="arrow"><b>300만원</b></td>
-                    <td class="bold"><em>한시적면제</em></td>
-                  </tr>
-                  <tr>
-                    <th>기기 및 장비</th>
-                    <td>숯불오븐조리기 / 자동볶음기 / 튀김기 / 정제기<br>초도집기 및 석쇠 / 작업대 및 선반 / 테이블냉장고 / 간택기 / 4도어 냉장고 등</td>
-                    <td class=""><em>2,150만원</em></td>
-                    <td class="">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <th>인테리어</th>
-                    <td>목공 / 전기 / 도장 / 홀덕트 / 바닥재 / 타일 / 방수 등</td>
-                    <td class="arrow big"><b>2,000만원</b><span>(1평당 200)</span></td>
-                    <td class="bold"><em>1,500만원</em><span>(1평당 200)</span></td>
-                  </tr>
-                  <tr>
-                    <th>간판</th>
-                    <td>LED채널간판, 외부시트지, 아크릴스카시 등</td>
-                    <td class="arrow"><b>450만원</b></td>
-                    <td class="bold"><em>개별시공가능</em></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="summary-box">
-                <ul class="left">
-                  <li class="star">별도사항 : 익스테리어, 가구, 스피커, CCTV, 냉난방기, 전기증설, 소방설비, 철거, 초도물류 등</li>
-                  <li class="star">포스시스템 : 장비(포스기, 캐치테이블 기기 포함) 렌탈 가능</li>
-                  <li class="star">위 자료는 매장 상황에 따라 변동될 수 있습니다.</li>
-                </ul>
-                <p class="star">10평(33m² 기준) | 단위 : 만원, VAT 별도</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="lnq-sec pd">
-          <div class="inner">
-            <div class="txt-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="0">
-              <h2 class="heading tit">창업문의</h2>
-              <p>
-                <span>꾸블랙과 함께할 예비 가맹점주님을 환영합니다.</span>
-                <span>하단의 정보를 기입해주시면 빠른 시일 내에 친절하고 자세한 상담 도와드리겠습니다.</span>
-              </p>
-            </div>
-            <div class="form-container" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
-              <div class="form-header">
-                <h3>상담자 정보</h3>
-                <p class="gray">별표 표시는 필수 입력 항목입니다.*</p>
-              </div>
-              <form class="contact-form" action="">
-                <div class="form-group">
-                  <label for="name">
-                    <span class="required">*</span>
-                    <span class="label-text">성함</span>
-                  </label>
-                  <input type="text" id="name" name="name" placeholder="성함" required>
-                </div>
-                <div class="form-group">
-                  <label for="phone">
-                    <span class="required">*</span>
-                    <span class="label-text">연락처</span>
-                  </label>
-                  <input type="tel" id="phone" name="phone" placeholder="연락처" required>
-                </div>
-                <div class="form-group">
-                  <label for="location">
-                    <span class="required">*</span>
-                    <span class="label-text">창업희망지역</span>
-                  </label>
-                  <select name="location" id="location" required>
-                    <option value="">시/도 선택</option>
-                    <option value="seoul">서울특별시</option>
-                    <option value="incheon">인천광역시</option>
-                    <option value="daejeon">대전광역시</option>
-                    <option value="gwangju">광주광역시</option>
-                    <option value="daegu">대구광역시</option>
-                    <option value="ulsan">울산광역시</option>
-                  </select>
-                </div>
-                <!-- <div class="form-group">
-                    <label for="business-type">
-                      <span class="label-text">유입경로</span>
-                    </label>
-                    <select name="business-type" id="business-type">
-                      <option value="">유입경로 선택</option>
-                      <option value="store_visit">매장방문</option>
-                      <option value="naver">네이버</option>
-                      <option value="instagram">인스타그램</option>
-                      <option value="youtube">유튜브</option>
-                      <option value="referral">지인소개</option>
-                      <option value="other">기타</option>
-                    </select>
-                  </div> -->
-                <div class="form-group select-toggle">
-                  <label for="business-type">
-                    <span class="label-text">유입경로</span>
-                  </label>
-                  <!--business-box active toggleClass -->
-                  <div class="business-box">
-                    <input type="text" name="" id="" value="유입경로 선택" readonly>
-                    <img src="img/selectarrow.png" alt="">
-                    <ul class="business-select">
-                      <li class="store_visit">매장방문</li>
-                      <li class="naver">네이버</li>
-                      <li class="instagram">인스타그램</li>
-                      <li class="youtube">유튜브</li>
-                      <li class="referral">지인소개</li>
-                      <li class="other">기타</li>
+    <div id="wrap">
+        <header>
+            <div class="inner h-in">
+                <h1><a href="index.html"><img src="img/logo_white.svg" alt="꾸블랙치킨"></a></h1> <!--로고는 h1으로 작성-->
+                <nav>
+                    <h2 class="sr-only">창업</h2> 
+                    <!-- 헤더,네비는 시맨틱요소기때문에 제목을 꼭 넣어줘야함. sronly는 읽히긴하지만 보이지않게 처리하는 클래스임. -->
+                    <ul>
+                        <li><a href="#brand">브랜드소개</a></li>
+                        <li><a href="#competi">브랜드경쟁력</a></li>
+                        <li><a href="#franchise">창업경쟁력</a></li>
+                        <li><a href="#guide">창업안내</a></li>
+                        <li><a href="#price">창업비용 및 문의</a></li>
                     </ul>
-                  </div>
+                </nav>
+
+                <div class="mo-navi">
+                    <div class="mo-navi-box">
+                        <!-- menu-btn을 클릭했을때 is-open 토글클래스 -->
+                            <span><h2>창업</h2></span>
+                        <ul class="">
+                            <!-- h2를 클릭했을 때 나오는 토글클래스 -->
+                            <li><a href="#brand">브랜드소개</a></li>
+                            <li><a href="#competi">브랜드경쟁력</a></li>
+                            <li><a href="#franchise">창업경쟁력</a></li>
+                            <li><a href="#guide">창업안내</a></li>
+                            <li><a href="#price">창업비용 및 문의</a></li>
+                        </ul>
+                    </div>
+                    <button class="menu-btn">
+                        <!-- is-open toggle클래스 -->
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
-                <div class="form-group">
-                  <label for="">
-                    <span class="label-text">점포유무</span>
-                  </label>
-                  <div class="toggle-group">
-                    <button type="button" class="toggle-btn active" data-value="option1">없음</button>
-                    <button type="button" class="toggle-btn" data-value="option2">있음</button>
-                    <!-- <input type="hidden" id="category" name="category" value="option1"> -->
-                    <!-- 사용자가 선택했지만, 서버에는 뭘 선택했는지 모름
-                       value에 선택값이 저장되면서 서버가 확인할 수 있음 -->
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="avail-time">상담 가능 요일/시간</label>
-                  <input type="text" id="avail-time" name="avail-time" placeholder="예) 주말/14시 이후">
-                </div>
-                <div class="form-group">
-                  <label for="message">문의내용</label>
-                  <textarea name="message" id="message" placeholder="문의내용" rows="6"></textarea>
-                </div>
-                <div class="form-footer">
-                  <div class="checkbox-group">
-                    <input type="checkbox" id="terms" neme="terms" required>
-                    <label for="terms" class="gray">
-                      개인정보 수집 활용을 동의합니다.
-                      <a href="#" class="terms-link">전문보기</a>
-                    </label>
-                  </div>
-                </div>
-                <button type="button" id="" class="submit-btn">개설 문의하기</button>
-              </form>
             </div>
-          </div>
-        </section>
-      </div>
-      <script>
-        const toggleBtns = document.querySelectorAll(".toggle-btn");
+        </header>
+        <script>
+            // querySelectorAll(모든걸 선택하는 요소) , querySelector(하나만 선택하는 요소) 
+            const menuBtn = document.querySelector(".menu-btn"); 
+            const moNaviBox = document.querySelector(".mo-navi-box");
+        
+            // menuBtn.addEventListener("click", function() {
+            //     console.log("클릭되었당")
+            // })
 
-        // toggleBtns.forEach(btn => {})
+            // 화살표 함수 (축약된 버전이다!)
+            // css로 만들고 script로 동작시킨다. 오류가 발생할경우 css문제일 가능성이 크다.
+            // add, remove, toggle
+            menuBtn.addEventListener("click", () => {
+                menuBtn.classList.toggle("is-open");
+                moNaviBox.classList.toggle("is-open");
+           
 
-        toggleBtns.forEach(btn => {
-          btn.addEventListener("click", () => {
-            console.log("클릭된 버튼", btn.textContent);
+            if(menuBtn.classList.contains("is-open")) {
+                console.log("열려있어!")
+            } else {
+                console.log("닫혀있어!")
+            }
+        })
 
-            toggleBtns.forEach(b => {
-              b.classList.remove("active");
+            const h2 = document.querySelector(".mo-navi-box h2");
+            const ul = document.querySelector(".mo-navi-box ul");
+            
+            h2.addEventListener("click", () => {
+                ul.classList.toggle("is-open");
             })
 
-            btn.classList.add("active");
+            // 모네비 박스 닫기 스크립트
+            const moNavia = document.querySelectorAll(".mo-navi-box a");
 
-          })
-        })
+            // moNavia.forEach(link => {
+            //     link.addEventListener("click", () => {
+            //         moNaviBox.classList.remove("is-open");
+            //         menuBtn.classList.remove("is-open");
+            //         h2.classList.remove("is-open");
+            //     });
+            // });
 
+            // 모바일 네비 a를 클릭했을때 모네비 박스가 .is-open클래스 삭제 menuBtn .is-open 클래스 삭제, h2요소 is-open 삭제
 
-        const businessBox = document.querySelector('.business-box');
-        const businessInput = document.querySelector('input[name=""]');
-        const businessLis = document.querySelectorAll('.business-select li');
+            moNavia.forEach(link => {
+                link.addEventListener("click", () => {
+                    [moNaviBox, menuBtn, ul].forEach(el =>
+                        el.classList.remove("is-open")
+                    );
+                });
+            });
+        </script>
+        <!-- 
+            menuBtn.classList.add() - 클래스 추가만 함.
+            menuBtn.classList.remove() - 클래스 제거만 함.
+            menuBtn.classList.toggle() - 있으면 제거, 없으면 추가함.
+            menuBtn.classList.replace("is-open", "is-closed") - 클래스를 다른걸로 바꿈.
+        -->
+        <main>
+            <ul class="menu-wrap">
+                <li class="active"><a href="#brand">브랜드소개</a></li>
+                <li><a href="#competi">브랜드경쟁력</a></li>
+                <li><a href="#franchise">창업경쟁력</a></li>
+                <li><a href="#guide">창업안내</a></li>
+                <li><a href="#price">창업비용 및 문의</a></li>
+            </ul>
+            
+            <!-- 
+                **스크립트 스타일쓸때 이렇게도 쓴다!
+                style.top
+                style.backgroundColor
+                style.boxShadow
+                style.borderRadius
+                style.fontSize
+                style.paddingTop
+            -->
 
-        // 열고닫기 기능
-        businessBox.addEventListener("click", () => {
-          businessBox.classList.toggle("active");
-        })
+            <section class="hero-sec heading" id="brand">
+                <div class="txt-ani" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1500">
+                    <div><strong>멈출수 없는 맛</strong></div>
+                    <div><strong>불맛을 제대로</strong></div>
+                </div>
+                <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1800">꾸블랙치킨</h2>
+                <p>1만 시간의 집념으로 제대로 구웠다.</p>
+            </section>
+            <script> // 히어로섹션 클립패스 스크립트
+                window.addEventListener("load", function() {
+                    document.querySelector(".hero-sec").classList.add("open");
+                })           
+           
+                let progress = 0;
+                let isHeroLocked = false;
+                let scrollPosY = 0;
+                const TOTAL = 1200;
+                let isUnlocking = false;
+                const heroPanel = document.querySelector("#brand");
 
-        businessLis.forEach(li => {
-          li.addEventListener("click", (e) => {
-            e.stopPropagation(); // 이벤트가 더이상 퍼져나가는걸 방지
+                window.addEventListener('wheel', (e) => {                
+                    // 마우스 휠을 아래로 휠 양수(true), 위로 휠 음수(false)
+                    // 아래인지, 위인지를 판단하는 것
+                    const goingDown = e.deltaY > 0;
+                    // console.log(e.deltaY);
+                    // getBoundingClientRect() 현재요소가 화면의 어디에 있는지 알려주는 함수
+                    const heroRect = heroPanel.getBoundingClientRect();
+                    // console.log(heroRect);
+                    // 요소의 아래쪽 끝이 화면의 맨 위(0px)에서 얼마나 떨어져 있는지 heroRect.bottom
+                    // 히어로 화면 아래쪽 끝이 아직 화면 위보다 아래에 있다면 true, 즉 화면에 아직 보이는 상태
+                    bottom = -50;
+                    const isHeroVisible = heroRect.bottom > 0;
 
-            businessInput.value = li.textContent;
-            businessBox.classList.remove("active");
-          })
-        })
-      </script>
-      <!-- 
-       html은 부모 자식 구조임
-        <div class="business-box"> <-부모
-        <ul class="business-select"> <-자식
-          <li>매장방문</li> <-손자
-        </ul>
-        </div>
+                    // 일반 스크롤 상태일때만 실행 
+                    if(!isHeroLocked) {
+                        // 아래로 스크롤 + hero섹션보임 + 아직애니메이션이 안끝남을 모두 만족
+                        const lockDown = goingDown && isHeroVisible && progress < 1;
+                        // 위로 스크롤 + 맨위 + 애니메이션이 끝난 상태이면 역재생
+                        const lockUp = !goingDown && window.scrollY <= 0 && progress > 0;
 
-        손자li를 클릭하면 부모도 클릭된것처럼 느껴짐 
-        li도 클릭되고 부모도 클릭된거라 인지하고 두개의 addEventListener가 모두 실행됨
-        e.stopPropagation()을 사용하면 부모까지 가지않게 전파를 막음 
-      -->
-    </main>
-    <footer>
-      <ul class="line1">
-        <li><a href="#"><strong>개인정보처리방침</strong></a></li>
-        <li><a href="#"><strong>이메일 무단 수집 거부</strong></a></li>
-      </ul>
-      <ul class="line2">
-        <li><a href="#">(주)꾸블랙</a></li>
-        <li><a href="#">대표이사: 강태성</a></li>
-        <li><a href="#">사업자등록번호: 671-86-04156</a></li>
-        <li><a href="#">부산광역시 남구 진남로 29번길 28</a></li>
-        <li><a href="mailto:kkublack_official@naver.com">이메일: kkublack_official@naver.com</a></li>
-        <li><a href="#">가맹문의 및 고객지원: 1811-9807</a></li>
-      </ul>
-      <p class="heading">COPYRIGHT &copy;KKUBLACK ALL RIGHTS RESERVED.</p>
-    </footer>
-  </div>
+                        // 아래 또는 위 조건이 만족된 경우 (둘중하나만 만족이되면)
+                        if (lockDown || lockUp) {
+                            // 스크롤 잠금 상태
+                            isHeroLocked = true;
+                            // 이전 예약남았다면 초기화
+                            isUnlocking = false;
+                            // 현재위치 저장 후 hidden(페이지 이동화면을 막음)
+                            scrollPosY = window.scrollY;
+                            document.documentElement.style.overflow = "hidden";
+                        }
+                    }
+
+                    // 잠겨있는 동안 실행(잠긴상태에서만)
+                    if(isHeroLocked) {
+                        // 기본스크롤(해당이벤트)을 막음
+                        e.preventDefault();
+                        // 스크롤 위치 고정(아까 저장한 위치로 계속 되돌려야 화면이 움직이지 않음)
+                        window.scrollTo(0, scrollPosY);
+                        // 120 / 1200 = 0.1 prgoress가 0.1,0.2,0.3으로 증가
+                        progress += e.deltaY / TOTAL;
+                        // -0.2면 0 1이 넘어가면 1로 제한하여 변환
+                        progress = Math.min(Math.max(progress, 0), 1);
+                        // css로 적용
+                        heroPanel.style.setProperty("--progress", progress);
+
+                        // 애니메이션 끝남 아직 스크롤 해제를 예약하지 않았다면 실행 
+                        if(progress >= 1 && !isUnlocking) {
+                            // 중복예약막기
+                            isUnlocking = true;
+
+                            setTimeout(() => {
+                                // 사용자가 다시 위로 돌리지 않았다면
+                                if(progress >= 1) {
+                                    // 잠금을 해제하자
+                                    isHeroLocked = false;
+                                    document.documentElement.style.overflow = "auto";
+                                }
+                                // 예약상태를 초기화
+                                isUnlocking = false;
+                            }, 600);
+                        }   
+
+                        // 역재생종료 - 잠금해제후 일반스크롤로 돌아감
+                        if(progress <= 0) {
+                            isHeroLocked = false;
+                            document.documentElement.style.overflow = "auto";
+                        }
+                    }
+                }, {passive : false});
+                // wheel이벤트안에서 preventDefault()를 사용할 것이다 라고 브라우저에게 알림
+                // wheel, touch이벤트에서는 기본적으로 스크롤을 막지 않을거지? 라고 동작함
+           </script>
+           <!-- 
+            사용자가 휠을 돌림
+            ↓           
+            아래또는위 스크롤인지 확인
+            ↓
+            Hero가 화면에 있는지 확인
+            ↓
+            스크롤 잠금
+            ↓
+            progress값 증가 (0 -> 1)
+            ↓
+            css변수변경(--progress)
+            ↓
+            텍스트위치와 투명도 애니메이션 실행(CSS작업)
+            ↓
+            progress = 1
+            ↓
+            600ms대기
+            ↓
+            스크롤잠금해제
+            ↓
+            다음섹션이동 
+           -->
+            <div class="banner-wrap heading">
+                <div class="banner-track">
+                    <div class="item">
+                        <span class="banner-text">ON BITE, NO BREAKS</span>
+                        <span class="banner-text">ON BITE, NO BREAKS</span>
+                        <span class="banner-text">ON BITE, NO BREAKS</span>
+                        <span class="banner-text">ON BITE, NO BREAKS</span>
+                    </div>
+                    <div class="item">
+                        <span class="banner-text">ON BITE, NO BREAKS</span>
+                        <span class="banner-text">ON BITE, NO BREAKS</span>
+                        <span class="banner-text">ON BITE, NO BREAKS</span>
+                        <span class="banner-text">ON BITE, NO BREAKS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <section class="count-sec">
+                <div class="txt-box">
+                    <h2 class="heading tit">꾸블랙은 지금도 <span>웨이팅 중</span></h2>
+                    <p>오로지 치킨 하나로 줄 세우는 곳</p>
+                </div>
+                <div class="count-txt heading">
+                    <p>오픈 한달만에 1억 돌파!</p>
+                    <div class="num"><strong>0원</strong></div>
+                </div>
+            </section>
+
+            <script>
+                const counter = (counterElement, max) => {
+                    let now = max; // max에서 시작해서 0을 향해 줄어듦
+
+                    // 30ms(0.03초)마다 반복실행
+                    const handle = setInterval(() => {
+                        // 화면에 표시 (목표 - 남은거리) = 지금까지 올라온 숫자
+                        // toLocaleString은 콤마 찍어주는 함수
+                        counterElement.innerHTML = Math.ceil(max-now).toLocaleString() + "원";
+
+                        // 남은거리가 1보다 작아지면 = 거의 도착했으면
+                        if(now < 1) {
+                            clearInterval(handle); // 반복 멈추기
+                            // 마지막에 정확하게 목표값 맞추기
+                            counterElement.innerHTML = max.toLocaleString() + "원";
+                        }
+                        // 남은거리 1/8만큼씩 이동 남은거리가 클수록 빠르고, 줄어들수록 작아짐
+                        const step = now / 8;
+                        now -= step;
+
+                    }, 30)
+                }
+
+                // const numEl = document.querySelector(".num strong");
+                // counter(numEl, 100_000_000); // _은 1e8과 같은 뜻
+                
+                // counterElement 숫자를 표시할 html 요소
+                // max 최종 목표 숫자
+
+                // 스크롤 이벤트
+                const startCountersOnScroll = () => {
+                    const numSec = document.querySelector(".count-sec");
+                    // count-sec이 문서 위에서 몇px 떨어졌는지 측정 (고정값)
+                    const numSecOffsetTop = numSec.offsetTop;
+                    // 이미 실행했는지 체크하는 스위치
+                    let started = false;
+
+                    // 스크롤 할 때마다 실행될 함수
+                    const handleScroll = () => {
+                        // 지금 얼마나 스크롤했는지 측정 (변하는 값)
+                        const scrollY = window.scrollY;
+                        if(scrollY >= numSecOffsetTop && !started) {
+                            const counterElement = document.querySelector(".num strong");
+                            counter(counterElement, 101184800);
+                            // 다시는 실행 안함.
+                            started = true;
+
+                            // 스크롤 이벤트 해제
+                            window.removeEventListener("scroll", handleScroll);
+                        }
+                    };
+                    // 스크롤 될때마다 handleScroll을 실행
+                    window.addEventListener("scroll", handleScroll);
+                };
+                // 페이지가 완전히 로드된 후 함수실행 
+                window.addEventListener('load', startCountersOnScroll);
+
+            </script>
+           
+            <div class="sec-wrap">
+              <div class="bg">
+                    <section class="intro-sec">
+                        <div class="inner">
+                            <h2 class="heading">
+                                <span>NEW ORIGIN</span>
+                                <span>KKUBLACK</span>
+                            </h2>
+                            <div class="txt-box">
+                                <p>치밥, 사리, 토핑으로 유명한 숯불치킨은 많은데
+                                    왜 ‘불맛’으로 기억되는 숯불치킨은 없을까?</p>
+                                <p>세상엔 수많은 숯불치킨이 있지만, 우리는 가장 기본인 ‘불맛’의 본질에 집중했습니다. 
+                                    F&B 전문가들이 모여 전통 숯불의 깊은 풍미를 재해석하고, 현대적 기술을 접목해 
+                                    숯불의 향 · 불의 온도 · 소스의 균형을 치밀하게 설계했습니다. 인위적인 향이 아닌 진짜 숯으로 
+                                    완성한 압도적인 맛의 차이. 오직 꾸블랙에서만 경험할 수 있는, 
+                                    입안 가득 부드럽고 은은하게 퍼지는 진짜 숯불향을 느껴보세요.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <section class="interior-sec pd" id="competi">
+                    <h2 class="heading tit">
+                        <span>공간 본질에 집중한 감도높은</span>
+                        <span>모던 레트로 인테리어</span>
+                    </h2>
+                    <div class="swiper g-slider">
+                         <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/s7_img1.jpg" alt="인테리어1" class="pc-img">
+                                <img src="img/s7_img1_mo.jpg" alt="인테리어1" class="mo-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/s7_img2.jpg" alt="인테리어2" class="pc-img">
+                                <img src="img/s7_img2_mo.jpg" alt="인테리어2" class="mo-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/s7_img3.jpg" alt="인테리어3" class="pc-img">
+                                <img src="img/s7_img3_mo.jpg" alt="인테리어3" class="mo-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/s7_img4.jpg" alt="인테리어4" class="pc-img">
+                                <img src="img/s7_img4_mo.jpg" alt="인테리어4" class="mo-img">
+                            </div>
+                         </div>
+                         <div class="swiper-pagination"></div>
+                         <div class="swiper-button-prev"></div>
+                         <div class="swiper-button-next"></div>
+                    </div>
+                </section>
+                <script>
+                    //const swiper = new Swiper('.g-slider',{})
+                    const swiper = new Swiper('.g-slider',{
+                        loop: true,
+                        pagination: {
+                            el: '.g-slider .swiper-pagination',
+                        },
+                        navigation: {
+                            nextEl: '.g-slider .swiper-button-next',
+                            prevEl: '.g-slider .swiper-button-prev',
+                        },
+                    })
+                </script>
+                <section class="merit-sec pd" id="franchise">
+                    <div class="inner">
+                        <div class="txt-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                data-aos-delay="300" data-aos-easing="ease-out" data-aos-once="true">
+                            <h2 class="heading tit">
+                                <span>1만 시간의 노하우를</span>
+                                <span>단 3가지 기술에 압축했습니다.</span>
+                            </h2>
+                            <p>초보 점주님이 만들어도 고객에게 가는 맛의 감동은 늘 똑같도록.<br>
+                            획일화된 맛을 쉽고 빠르게 구현하는 꾸블랙만의 기술력</p>
+                        </div>
+                        <ul>
+                            <li data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="0">
+                                <div class="img-box">
+                                    <img src="img/s10_img1.jpg" alt="꾸블랙치킨">
+                                    <strong>초벌</strong>
+                                </div>
+                                <div class="sub-box">
+                                    <h3>꾸블랙 전용 초벌기</h3>
+                                    <p>섬세한 온도 제어로 불향의 디테일을 완성</p>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
+                                <div class="img-box">
+                                    <img src="img/s10_img2.jpg" alt="꾸블랙치킨">
+                                    <strong>소스</strong>
+                                </div>
+                                <div class="sub-box">
+                                    <h3>규격화 시그니처 소스</h3>
+                                    <p>세밀한 조제로 맛의 편차를 원천 차단</p>
+                                </div>
+                            </li>
+                            <li data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="600">
+                                <div class="img-box">
+                                    <img src="img/s10_img3.jpg" alt="꾸블랙치킨">
+                                    <strong>조리</strong>
+                                </div>
+                                <div class="sub-box">
+                                    <h3>스마트 자동조리기</h3>
+                                    <p>버튼 하나로 본점의 화력을 그대로 재현</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="youtube-sec pd">
+                    <h2 class="heading tit" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                        <span>22평 매장에서 억대매출 달성!</span>
+                        <span>비법은 빠른 조리과정에 있습니다.</span>
+                    </h2>
+                    <div class="media" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                        <iframe width="100%" height="100%"
+                         src="https://www.youtube.com/embed/JrRyUu3Q1wE?si=TY7SB-xPvLHYsJaW" title="YouTube video player"
+                          frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                          encrypted-media; gyroscope; picture-in-picture; web-share" 
+                          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="sub-tit">
+                        <p>6마리 완성에 <span>단 8분!</span></p>
+                        <p>주문부터 서빙까지 <span>단 9분!</span></p>
+                    </div>
+                </section>
+                <section class="benefit-sec pd" id="guide">
+                  <div class="inner">
+                      <div class="txt-box">
+                        <h2 class="heading tit">성원에 감사드립니다.</h2>
+                        <p>부산본점 오픈과 함께 지금까지 수많은 가맹 문의가 이어졌으나<br>
+                            무분별한 빠른 확장보다, 가맹점과 함께 성장할 수 있는 체계를 만들기 위해 준비에 집중하였습니다.<br>
+                            이제 그 기다림에 보답하며, 단 한 번의 창업 프로모션을 시작합니다.</p>
+                    </div>
+                    <ul>
+                        <li class="r-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="0">
+                            <strong class="heading">500만원</strong>
+                            <span>가맹비 전액면제</span>
+                        </li>
+                         <li class="r-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
+                            <strong class="heading">200만원</strong>
+                            <span>교육비 전액면제</span>
+                        </li>
+                         <li class="r-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="600">
+                            <strong class="heading">300만원</strong>
+                            <span>보증금 전액면제</span>
+                        </li>
+                         <li class="r-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="900">
+                            <strong class="heading">500만원</strong>
+                            <span>인테리어 비용 평당 50만원 할인</span>
+                            <span class="star" style="color: var(--color-gray-500);">10평 기준</span>
+                        </li>
+                         <li class="r-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1200">
+                            <strong class="heading">로열티, 광고비 면제</strong>
+                            <span>3.3% 로열티 및 광고분담금 한시적 면제</span>
+                        </li>
+                         <li class="y-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="1500">
+                            <strong class="heading">오픈마케팅 지원</strong>
+                            <span>블로그체험단, 채널광고 등</span>
+                        </li>
+                    </ul>
+                  </div>
+                </section>
+                <section class="franc-sec pd" id="price">
+                    <div class="inner">
+                        <div class="txt-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                            <h2 class="heading tit">신규창업 비용</h2>
+                            <p>본사 마진만 남는 거품 비용은 확 빼고 창업비용만 남겼습니다.</p>
+                        </div>
+                       <div class="scroll-box">
+                         <table>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>내용</th>
+                                    <th>금액</th>
+                                    <th>프로모션가</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4"><div>합계 <strong>3,650</strong>만원 <span>(5,600만원)</span></div></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <th>가맹비</th>
+                                    <td>브랜드 상호 및 상표사용권, 영업권 보장 등</td>
+                                    <td class="arrow"><b>500만원</b></td>
+                                    <td class="bold"><em>한시적면제</em></td>
+                                </tr>
+                                 <tr>
+                                    <th>교육비</th>
+                                    <td>제조 / 운영 / 서비스</td>
+                                    <td class="arrow"><b>200만원</b></td>
+                                    <td class="bold"><em>한시적면제</em></td>
+                                </tr>
+                                <tr>
+                                    <th>이행보증금</th>
+                                    <td>각종 계약관련 이행 보증금</td>
+                                    <td class="arrow"><b>300만원</b></td>
+                                    <td class="bold"><em>한시적면제</em></td>
+                                </tr>
+                                 <tr>
+                                    <th>기기 및 장비</th>
+                                    <td>숯불오븐조리기 / 자동볶음기 / 튀김기 / 정제기
+                                        초도집기 및 석쇠 / 작업대 및 선반 / 테이블냉장고 / 간택기 / 4도어 냉장고 등</td>
+                                    <td class=""><em>2,150만원</em></td>
+                                    <td class="">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <th>인테리어</th>
+                                    <td>목공 / 전기 / 도장 / 홀덕트 / 바닥재 / 타일 / 방수 등</td>
+                                    <td class="arrow big"><b>2000만원</b><span>(1평당 200)</span></td>
+                                    <td class="bold"><em>1,500만원</em><span>(1평당 200)</span></td>
+                                </tr>
+                                 <tr>
+                                    <th>간판</th>
+                                    <td>LED채널간판, 외부시트지, 아크릴스카시 등</td>
+                                    <td class="arrow"><b>450만원</b></td>
+                                    <td class="bold"><em>개별시공가능</em></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="summary-box">
+                            <ul class="left">
+                                <li class="star">별도사항 : 익스테리어, 가구, 스피커, CCTV, 냉난방기, 전기증설, 소방설비, 철거, 초도물류 등</li>
+                                <li class="star">포스시스템 : 장비(포스기, 캐치테이블 기기 포함) 렌탈 가능</li>
+                                <li class="star">위 자료는 매장 상황에 따라 변동될 수 있습니다.</li>
+                            </ul>
+                            <p class="star">10평(33m² 기준) | 단위 : 만원, VAT 별도</p>
+                        </div>
+                       </div>
+                    </div>
+                </section>
+                <section class="lnq-sec pd">
+                    <div class="inner">
+                        <div class="txt-box" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="0">
+                          <h2 class="heading tit"> 창업문의 </h2>
+                           <p>
+                            <span>꾸블랙과 함께할 예비 가맹점주님을 환영합니다.</span>
+                            <span>하단의 정보를 기입해주시면 빠른 시일 내에 친절하고 자세한 상담 도와드리겠습니다.</span>
+                           </p>
+                        </div>
+                        <div class="form-container" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="300">
+                                <div class="form-header">
+                                    <h3>상담자 정보</h3>
+                                    <p class="gray">별표 표시는 필수 입력 항목입니다.</p>
+                                </div>
+                                <form class="contact-form" action="">
+                                    <div class="form-group">
+                                        <label for="name">
+                                            <span class="required">*</span>
+                                            <span class="label-text">성함</span>
+                                        </label>
+                                        <input type="text" id="name" name="name"
+                                        placeholder="성함" required>
+                                        <!-- required : 필수입력 항목에 적용하는 요소. 비우지말라고 안내를 띄워줌 -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">
+                                            <span class="required">*</span>
+                                            <span class="label-text">연락처</span>
+                                        </label>
+                                        <input type="tel" id="phone" name="phone"
+                                        placeholder="연락처" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="location">
+                                            <span class="required">*</span>
+                                            <span class="label-text">창업희망지역</span>
+                                        </label>
+                                        <select name="location" id="location" required>
+                                            <option value="">시/도 선택</option>
+                                            <option value="seoul">서울특별시</option>
+                                            <option value="incheon">인천광역시</option>
+                                            <option value="daejeon">대전광역시</option>
+                                            <option value="gwangju">광주광역시</option>
+                                            <option value="daegu">대구광역시</option>
+                                            <option value="ulsan">울산광역시</option>
+                                        </select>
+                                     </div>
+                                    <!-- <div class="form-group">
+                                        <label for="business-type">
+                                            <span class="label-text">유입경로</span>
+                                        </label>
+                                        <select name="business-type" id="business-type">
+                                            <option value="">유입경로 선택</option>
+                                            <option value="store_visit">매장방문</option>
+                                            <option value="naver">네이버</option>
+                                            <option value="instagram">인스타그램</option>
+                                            <option value="youtube">유튜브</option>
+                                            <option value="referral">지인소개</option>
+                                            <option value="other">기타</option>
+                                        </select>
+                                    </div> -->
+                                    <div class="form-group select-toggle">
+                                        <label for="business-type">
+                                            <span class="label-text">유입경로</span>
+                                        </label>
+                                        <!-- business-box active toggleClass -->
+                                        <!-- 셀렉트를 만들때는 **접근성에 맞게** 셀렉트용 요소를 쓰는게 좋다. -->
+                                       <div class="business-box">
+                                         <input type="text" name="" id="" value="유입경로 선택" readonly>
+                                        <img src="img/selectarrow.png" alt="">
+                                        <ul class="business-select">
+                                            
+                                            <li class="store_visit">매장방문</li>
+                                            <li class="naver">네이버</li>
+                                            <li class="instagram">인스타그램</li>
+                                            <li class="youtube">유튜브</li>
+                                            <li class="referral">지인소개</li>
+                                            <li class="other">기타</li>
+                                        </ul>
+                                       </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">
+                                            <span class="label-text">점포유무</span>
+                                        </label>
+                                        <div class="toggle-group">
+                                            <button type="button" class="toggle-btn active" data-value="option1">없음</button>
+                                            <button type="button" class="toggle-btn" data-value="option2">있음</button>
+                                            <!-- <input type="hidden" id="category" name="category" value="option1"> -->
+                                            <!-- 사용자가 선택했지만, 서버에서는 뭘 선택했는지 모름. value에 선택값이 저장되면서 서버가 확인할 수 있음. -->
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="avail-time">상담 가능 요일/시간</label>
+                                        <input type="text" name="avail-time" id="avail-time" placeholder="예) 주말/14시 이후">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">문의내용</label>
+                                        <textarea name="message" id="message" placeholder="문의내용" rows="6"></textarea>
+                                    </div>
+                                    <div class="form-footer">
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" name="terms" id="terms" required>
+                                            <label for="terms" class="gray">
+                                                개인정보 수집 활용을 동의합니다.
+                                                <a href="#" class="terms-link">전문보기</a>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button type="button" id="" class="submit-btn">개설 문의하기</button>
+                                </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <script>
+                /* 유입경로 */
+                const BusinessBox = document.querySelector('.business-box'); 
+                const BusinessInput = document.querySelector('input[name=""]');
+                const BusinessLis = document.querySelectorAll('.business-select li');
+                
+                // 열고닫기 가능
+                 BusinessBox.addEventListener("click", () => {
+                 BusinessBox.classList.toggle("active");
+                 })
+
+                 BusinessLis.forEach(li => {
+                    li.addEventListener("click", (e) => {
+                        e.stopPropagation(); // 자식에게 이벤트를 줄때 부모에게 충돌하지말라고 주는 메서드 , 이벤트가 더이상 퍼져나가는 걸 방지.
+                        BusinessInput.value = li.textContent;
+                        BusinessBox.classList.remove("active");
+                    })
+                 })
+
+                /* 점포유무 */  
+                const toggleBtns = document.querySelectorAll(".toggle-btn");
+                
+                toggleBtns.forEach(btn => {
+                    btn.addEventListener("click", () => {
+                        console.log("클릭된 버튼", btn.textContent);
+                        // html에 적힌 텍스트를 콘솔에 띄어줌. "콘솔: 클릭된 버튼 없음 / 있음" 이렇게뜬다.
+                        toggleBtns.forEach(b => {
+                            b.classList.remove("active");
+                        })
+
+                        btn.classList.add("active");
+                    })
+                })
+
+            </script>
+            <!-- 
+                html은 부모 자식 구조임.
+                <div class="business-box"> <- 부모
+                   <ul class="business-select"> <- 자식
+                     <li></li> <- 손자
+                   </ul>
+                </div>  
+                
+                손자li를 클릭하면 부모도 클릭된것처럼 느껴짐.
+                li도 클릭되고 부모도 클릭된거라 인지하고 두개의 addEventListener가 모두 실행됨.
+                e.stopPropagation()을 사용하면 부모까지 가지않게 전파를 막음.
+            -->
+        </main>
+
+        <footer>
+            <ul class="line1">
+                <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                <li><a href="#"><strong>이메일 무단 수집 거부</strong></a></li>
+            </ul>
+            <ul class="line2">
+                <li><a href="#">(주)꾸블랙</a></li>
+                <li><a href="#">대표이사: 강태성</a></li>
+                <li><a href="#">사업자등록번호: 671-86-04156</a></li>
+                <li><a href="#">부산광역시 남구 진남로 29번길 28</a></li>
+                <li><a href="mailto:kkublack_official@naver.com">이메일: kkublack_official@naver.com</a></li>
+                <li><a href="#">가맹문의 및 고객지원: 1811-9807</a></li>
+            </ul>
+            <p class="heading">COPYRIGHT &copy;KKUBLACK ALL RIGHTS RESERVED.</p>
+        </footer>
+    </div>
 </body>
- <!-- 스크롤작업시 header가 사라진 후에 생성 -->
-<!-- 
-<li><a href="#brand">브랜드소개</a></li>
-            <li><a href="#competi">브랜드경쟁력</a></li>
-            <li><a href="#franchise">창업경쟁력</a></li>
-            <li><a href="#guide">창업안내</a></li>
-            <li><a href="#price">창업비용 및 문의</a></li> 
--->
-<script>
-  const menuWrap = document.querySelector(".menu-wrap");
-  const menuItems = menuWrap.querySelectorAll("li");
-  const sections = document.querySelectorAll("#brand, #competi, #franchise, #guide, #price");
+ <!-- 스크롤 작업시 header가 사라진 후에 생성!! -->
+    <script>
+    const menuWrap = document.querySelector(".menu-wrap");
+    const menuItems = menuWrap.querySelectorAll("li");
+    const sections = document.querySelectorAll("#brand, #competi, #franchise, #guide, #price");
 
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
+    window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+
+        // console.log(scrollY);
+
+        if(scrollY > 100) {
+            // menuWrap.classList.add("show");
+            menuWrap.style.display = "flex";
+        } else {
+            // menuWrap.classList.remove("show");
+            menuWrap.style.display = "none";
+        } //else를 넣어야만 100보다 작아질때 사라짐. if만 넣으면 사라지지않고 계속 나옴 
+
+        // 지금 어느섹션에 있는지 찾기
+        let currentId = "";
+
+        sections.forEach((section) => {
+            // section.offsettop은 그 섹션이 페이지 맨위에서 얼마나 떨어져있는지
+            // -150은 여유값, 섹션이 화면상단에거의 닿을때 미리 바꿔주려는 조건식
+            if(scrollY >= section.offsetTop - 150) {
+                currentId = section.id;
+            }
+        })
+
+        // currnetId와 일치하는 링크를 가진 li에 active를 적용
+        menuItems.forEach((item) => {
+            item.classList.remove("active");
+
+            const link = item.querySelector("a");
+            if(link.getAttribute("href") === "#" + currentId) {
+                item.classList.add("active");
+            }
+        })
     
-    if (scrollY > 100) {
-      // menuWrap.classList.add("show");
-      menuWrap.style.display = "flex";
-    } else {
-      // menuWrap.classList.remove("show");
-      menuWrap.style.display = "none";
-    }
-
-    // 지금 어느섹션에 있는지 찾기
-    let currentId = "";
-
-    sections.forEach((section) => {
-      // section.offsetTop은 그 섹션이 페이지 맨 위에서 얼마나 떨어져있는지
-      // -150은 여유값, 섹션이 화면 상단에 거의 닿을 때 미리 바꿔주려는 조건식
-      if(scrollY >= section.offsetTop - 150) {
-        currentId = section.id;
-      }
     })
+    </script>
+    <script>
+        // AOS.init();
 
-    // currentId와 일치하는 링크를 가진 li에 active적용
-    menuItems.forEach((item) => {
-      item.classList.remove("active");
+        // 전체적인 속성제어
+        AOS.init({
+            duration: 1000,
+            delay: 200
+        });
+    </script>
 
-      const link = item.querySelector("a");
-      if(link.getAttribute("href") === "#" + currentId) {
-        item.classList.add("active");
-      }
-    })
-
-  })  
-</script>
-<!-- 
-  style.top
-  style.backgroundColor
-  style.boxShadow
-  style.borderRadius
-  style.fontSize
-  style.paddingTop
--->
-
-<script>
-  // AOS.init();
-
-  // 전체적인 속성 제어
-  AOS.init({
-    duration: 1000,
-    delay: 200
-  });
-</script>
-
-<!-- 
-  <div
-    data-aos="fade-up"
-    data-aos-offset="200"
-    data-aos-delay="50"
-    data-aos-duration="1000"
-    data-aos-easing="ease-in-out"
-    data-aos-once="false"
-    data-aos-anchor-placement="top-center"
-  >
-  </div>
--->
+    <!-- 
+        <div>
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-onse="false"
+            data-aos-anchor-placement="top-center"
+        </div>
+    -->
 </html>
