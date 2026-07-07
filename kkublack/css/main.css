@@ -304,14 +304,20 @@ nav a:hover {
 
 
 /* hero-sec */
+.hero-wrap {
+  height: 250dvh;
+}
 .hero-sec {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
   /* justify-content: center; */
   width: 100%;
-  height: calc(145dvh - 80px);
+  /* height: calc(145dvh - 80px); */
   padding-top: 120px;
   background: var(--color-black) url(../img/s1_bg.jpg) no-repeat center / cover;
   text-align: center;
@@ -357,8 +363,9 @@ nav a:hover {
   letter-spacing: -0.02em;
   /* transform: translateY(54px);
   transition: 0.5s 0.5s; */
-  opacity: calc(var(--progress, 0) * 0.8);
-  transform: translateY(calc((1 - var(--progress, 0)) * 54px));
+  --p-local: clamp(0, (var(--progress, 0) - 0.5) * 2, 1);
+  opacity: calc(var(--p-local) * 0.8);
+  transform: translateY(calc((1 - var(--p-local)) * 54px));
   transition: transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 /* .hero-sec.scroll p {
