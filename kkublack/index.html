@@ -753,6 +753,15 @@
             }
         })
 
+        menuItems.forEach((item) => {
+            const link = item.querySelector("a");
+        
+            link.addEventListener("click", () => {
+                menuItems.forEach(li => li.classList.remove("active"));
+                item.classList.add("active");
+            });
+        });
+
         // currnetId와 일치하는 링크를 가진 li에 active를 적용
         menuItems.forEach((item) => {
             item.classList.remove("active");
