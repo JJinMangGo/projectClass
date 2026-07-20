@@ -729,6 +729,16 @@
     const menuItems = menuWrap.querySelectorAll("li");
     const sections = document.querySelectorAll("#brand, #competi, #franchise, #guide, #price");
 
+    menuItems.forEach((item) => {
+        const link = item.querySelector("a");
+    
+        link.addEventListener("click", () => {
+            menuItems.forEach(li => li.classList.remove("active"));
+            item.classList.add("active");
+        });
+    });
+
+
     window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
 
@@ -759,16 +769,15 @@
             item.classList.remove("active");
 
             const link = item.querySelector("a");
-            link.addEventListener("click", () => {
-                menuItems.forEach(li => li.classList.remove("active"));
-                item.classList.add("active");
-            });
+            
             if(link.getAttribute("href") === "#" + currentId) {
                 item.classList.add("active");
             }
         })
     
     })
+
+    
     </script>
     <script>
         // AOS.init();
