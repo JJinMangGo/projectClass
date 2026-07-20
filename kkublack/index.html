@@ -728,56 +728,40 @@
     const menuWrap = document.querySelector(".menu-wrap");
     const menuItems = menuWrap.querySelectorAll("li");
     const sections = document.querySelectorAll("#brand, #competi, #franchise, #guide, #price");
-
-    menuItems.forEach((item) => {
-        const link = item.querySelector("a");
     
-        link.addEventListener("click", () => {
-            menuItems.forEach(li => li.classList.remove("active"));
-            item.classList.add("active");
-        });
-    });
-
-
+    // 클릭 핸들러 삭제! active는 스크롤 핸들러가 전담한다.
+    
     window.addEventListener("scroll", () => {
         const scrollY = window.scrollY;
-
-        // console.log(scrollY);
-
-        if(scrollY > 100) {
-            // menuWrap.classList.add("show");
-            menuWrap.style.display = "flex";
-        } else {
-            // menuWrap.classList.remove("show");
-            menuWrap.style.display = "none";
-        } //else를 넣어야만 100보다 작아질때 사라짐. if만 넣으면 사라지지않고 계속 나옴 
-
-        // 지금 어느섹션에 있는지 찾기
+    
+        menuWrap.style.display = scrollY > 100 ? "flex" : "none";
+    
         let currentId = "";
-
+    
         sections.forEach((section) => {
-            // section.offsettop은 그 섹션이 페이지 맨위에서 얼마나 떨어져있는지
-            // -150은 여유값, 섹션이 화면상단에거의 닿을때 미리 바꿔주려는 조건식
-            if(scrollY >= section.offsetTop - 150) {
+            // getBoundingClientRect().top은 "화면 기준" 거리
+            // 여기에 scrollY를 더하면 부모 position과 상관없이 항상 "문서 기준" 위치가 나옴
+            const sectionTop = section.getBoundingClientRect().top + scrollY;
+    
+            if (scrollY >= sectionTop - 150) {
                 currentId = section.id;
             }
-        })
-      
-
-        // currnetId와 일치하는 링크를 가진 li에 active를 적용
+        });
+    
+        // 바닥 예외: 페이지 끝까지 내려왔으면 무조건 마지막 섹션
+        // (마지막 섹션은 화면 상단에 도달할 수 없어서 위 계산으로는 안 잡힘)
+        if (window.innerHeight + scrollY >= document.body.offsetHeight - 5) {
+            currentId = sections[sections.length - 1].id;
+        }
+    
         menuItems.forEach((item) => {
             item.classList.remove("active");
-
             const link = item.querySelector("a");
-            
-            if(link.getAttribute("href") === "#" + currentId) {
+            if (link.getAttribute("href") === "#" + currentId) {
                 item.classList.add("active");
             }
-        })
-    
-    })
-
-    
+        });
+    });
     </script>
     <script>
         // AOS.init();
